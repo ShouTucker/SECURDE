@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Main {
     
     public SQLite sqlite;
+    public LogWrite logWrite;
     
     public static void main(String[] args) {
         new Main().init();
@@ -44,6 +45,7 @@ public class Main {
             System.out.println(" Role: " + users.get(nCtr).getRole());
         }
         
+        logWrite = new LogWrite();
         // Initialize User Interface
         Frame frame = new Frame();
         frame.init(this);

@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 public class SQLite {
     
-    String driverURL = "jdbc:sqlite:" + "database.db";
+    private String driverURL = "jdbc:sqlite:" + "database.db";
+    private LogWrite logWrite = new LogWrite();
     
     public void createNewDatabase() {
         try (Connection conn = DriverManager.getConnection(driverURL)) {
@@ -56,10 +57,9 @@ public class SQLite {
             
             while (rs.next()) {
                 users.add(new User(rs.getInt("id"),
-                                   rs.getString("username"),
-                                   rs.getString("password"),
-                                   rs.getInt("role")));
-            
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getInt("role")));           
             }
         } catch (Exception ex) {}
         return users;
@@ -71,14 +71,16 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
-            
+            logWrite.writeToLog("User: " + username + " with Role: 2 added to database");
 //  For this activity, we would not be using prepared statements first.
 //      String sql = "INSERT INTO users(username,password) VALUES(?,?)";
 //      PreparedStatement pstmt = conn.prepareStatement(sql)) {
 //      pstmt.setString(1, username);
 //      pstmt.setString(2, password);
 //      pstmt.executeUpdate();
-        } catch (Exception ex) {}
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR User: " + username + " with Role: 2 was NOT added to database");
+        }
     }
     
     public void addUser(String username, String password, int role) {
@@ -87,8 +89,11 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
+            logWrite.writeToLog("User: " + username + " with Role: " + role + " added to database");
             
-        } catch (Exception ex) {}
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR User: " + username + " with Role: " + role + " was NOT added to database");
+        }
     }
     
     public void removeUser(String username) {
@@ -97,21 +102,23 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("User " + username + " has been deleted.");
-        } catch (Exception ex) {}
+            logWrite.writeToLog("User: " + username + " has been deleted.");
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR User: " + username + " was not deleted.");
+        }
     }
     
     public boolean checkUserExists(String username){
         String sql = "SELECT username FROM users WHERE username='" + username +"';";
         
-        System.out.println(sql);
+        //System.out.println(sql);
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql)){
             
             if(!rs.next()){
-                System.out.println("User Unique. Account: " + username + " Created");
+                //System.out.println("User Unique. User: " + username + " Created");
                 return true;
             }
         } catch (Exception ex) {}
@@ -129,7 +136,7 @@ public class SQLite {
             ResultSet rs = stmt.executeQuery(sql)){
             
             if(rs.next()){
-                System.out.println("User " + username + " has logged in");
+                new LogWrite().writeToLog("User: " + username + " has logged in");
                 return true;
             }
         } catch (Exception ex) {}

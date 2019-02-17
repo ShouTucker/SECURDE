@@ -180,27 +180,32 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBtnActionPerformed
-        if(getUserRole(username) == 5)
-            viewContent("adminHomePnl");
+        //if(getUserRole(username) == 5)
+            //viewContent("adminHomePnl");
+        checkAccess("adminHomePnl", 5);    
     }//GEN-LAST:event_adminBtnActionPerformed
 
     private void managerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerBtnActionPerformed
-        if(getUserRole(username) == 4)
-            viewContent("managerHomePnl");
+        //if(getUserRole(username) == 4)
+            //viewContent("managerHomePnl");
+        checkAccess("managerHomePnl", 4);
     }//GEN-LAST:event_managerBtnActionPerformed
 
     private void staffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffBtnActionPerformed
-        if(getUserRole(username) == 3)
-            viewContent("staffHomePnl");
+        //if(getUserRole(username) == 3)
+            //viewContent("staffHomePnl");
+        checkAccess("staffHomePnl", 3);
     }//GEN-LAST:event_staffBtnActionPerformed
 
     private void clientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientBtnActionPerformed
-        if(getUserRole(username) == 2)
-            viewContent("clientHomePnl");
+        //if(getUserRole(username) == 2)
+            //viewContent("clientHomePnl");
+        checkAccess("clientHomePnl", 2);
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         disableHomeAccess();
+        writeToLog("User: " + username + " has logged out");
         frameView.show(Container, "loginPnl");
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -217,6 +222,7 @@ public class Frame extends javax.swing.JFrame {
     private CardLayout frameView = new CardLayout();
     
     private String username;
+    private String currentPanel = "";
     
     public void init(Main controller){
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -245,7 +251,7 @@ public class Frame extends javax.swing.JFrame {
     public void mainNav(String username){
         frameView.show(Container, "homePnl");
         this.username = username;
-        checkAccess();
+        prepareHome();
     }
     
     public void loginNav(){
@@ -273,12 +279,20 @@ public class Frame extends javax.swing.JFrame {
     }
     
     private void viewContent(String content){
-        contentView.show(Content, content);
+        if(!currentPanel.equals(content)){
+            writeToLog("User: " + username + " accessing " + content);
+            currentPanel = content;
+            contentView.show(Content, content);
+        }
     }
     
-    private void checkAccess(){
+    public void writeToLog(String log){
+        main.logWrite.writeToLog(log);
+    }
+    
+    private void prepareHome(){
         final int role = getUserRole(username);
-        System.out.println(username + " with role " + role);
+        //System.out.println(username + " with role " + role);
         switch (role) {
             case 2:
                 clientBtn.setVisible(true);
@@ -299,6 +313,13 @@ public class Frame extends javax.swing.JFrame {
             default:
                 break;
         }
+    }
+    
+    private void checkAccess(String content, int roleRequired){
+        if(getUserRole(username) == roleRequired)
+            viewContent(content);
+        else
+            writeToLog("ERROR User: " + username + " with Role: " + getUserRole(username) + " tried to access " + content);
     }
     
     private void disableHomeAccess(){
