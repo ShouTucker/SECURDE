@@ -24,7 +24,7 @@ public class Main {
         sqlite.createNewDatabase();
         
         // Drop users table if needed
-        sqlite.dropUserTable();
+        //sqlite.dropUserTable();
         
         // Create users table if not exist
         sqlite.createUserTable();

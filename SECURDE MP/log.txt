@@ -1,0 +1,8 @@
+User: admin with Role: 5 added to database 2019-02-19T01:52:00.317
+User: manager with Role: 4 added to database 2019-02-19T01:52:00.398
+User: staff with Role: 3 added to database 2019-02-19T01:52:00.473
+User: client1 with Role: 2 added to database 2019-02-19T01:52:00.540
+User: client2 with Role: 2 added to database 2019-02-19T01:52:00.624
+User: client1 has logged in 2019-02-19T01:52:14.902
+User: client1 accessing clientHomePnl 2019-02-19T01:52:14.909
+User: client1 has logged out 2019-02-19T01:52:18.303
