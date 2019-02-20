@@ -109,13 +109,17 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        try {
+        if(!frame.checkAttempts(username.getText())){
+            clearUsernamePassword();
+            errorField.setText("Too Much Attempts!");
+        }else try {
             if(frame.checkValidLogin(username.getText(), String.valueOf(password.getPassword()))){
                 frame.mainNav(username.getText());
                 clearFields();
             }
             else{
-                errorField.setText("Please Try Again");
+                errorField.setText("The Username or Password is Incorrect, Please Try Again!");
+                clearUsernamePassword();
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -137,6 +141,10 @@ public class Login extends javax.swing.JPanel {
         username.setText("");
         password.setText("");
         errorField.setText("");
+    }
+    private void clearUsernamePassword(){
+        username.setText("");
+        password.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

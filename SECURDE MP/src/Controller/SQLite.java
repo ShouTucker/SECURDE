@@ -162,7 +162,18 @@ public class SQLite {
             }
             
         } catch (Exception ex) {}
-        
+        new LogWrite().writeToLog("User: " + username + " attempted to logged in");
+        new LogWrite().writeToAttempts("User: " + username + " attempted to logged in");
+        return false;
+    }
+    
+    public boolean attemptCheck(String username){
+        int attempts=-1;
+        attempts=new LogWrite().readAttempts();
+        if(attempts<=10 && attempts>=0)
+            return true;
+        new LogWrite().writeToLog("User: " + username + " attempted to logged in");
+        new LogWrite().writeToAttempts("User: " + username + " attempted to logged in");
         return false;
     }
     

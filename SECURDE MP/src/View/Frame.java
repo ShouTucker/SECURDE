@@ -275,7 +275,9 @@ public class Frame extends javax.swing.JFrame {
     public boolean checkValidLogin(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException{
         return main.sqlite.loginCheck(username, password);
     }
-    
+    public boolean checkAttempts(String username){
+        return main.sqlite.attemptCheck(username);
+    }
     public int getUserRole(String username){
         return main.sqlite.getRole(username);
     }

@@ -120,6 +120,7 @@ public class Register extends javax.swing.JPanel {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(checkError()){    
+            
             try {
                 frame.registerAction(username.getText(), String.valueOf(password.getPassword()), String.valueOf(confpass.getPassword()));
             } catch (NoSuchAlgorithmException ex) {
@@ -127,6 +128,7 @@ public class Register extends javax.swing.JPanel {
             } catch (InvalidKeySpecException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
             frame.loginNav();
             clearFields();
         }
