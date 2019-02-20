@@ -287,3 +287,110 @@ User:  attempted to logged in 2019-02-20T17:17:44.730
 User: qwer has logged in 2019-02-20T17:17:54.114
 User: qwer accessing clientHomePnl 2019-02-20T17:17:54.131
 User: qwer has logged out 2019-02-20T17:17:59.800
+User: admin with Role: 5 added to database 2019-02-20T21:56:06.441
+User: manager with Role: 4 added to database 2019-02-20T21:56:06.464
+User: staff with Role: 3 added to database 2019-02-20T21:56:06.489
+User: client1 with Role: 2 added to database 2019-02-20T21:56:06.511
+User: client2 with Role: 2 added to database 2019-02-20T21:56:06.534
+User: AdMIn1 with Role: 2 added to database 2019-02-20T21:57:21.108
+User: AdMin attempted to logged in 2019-02-20T21:57:46.323
+User: admin1 attempted to logged in 2019-02-20T21:58:54.471
+User: AdMIn1 attempted to logged in 2019-02-20T22:02:08.651
+User: AdmIn attempted to logged in 2019-02-20T22:02:25.878
+User: admin with Role: 5 added to database 2019-02-20T22:03:20.808
+User: manager with Role: 4 added to database 2019-02-20T22:03:20.838
+User: staff with Role: 3 added to database 2019-02-20T22:03:20.862
+User: client1 with Role: 2 added to database 2019-02-20T22:03:20.886
+User: client2 with Role: 2 added to database 2019-02-20T22:03:20.907
+User: admin has logged in 2019-02-20T22:03:33.878
+User: admin accessing adminHomePnl 2019-02-20T22:03:33.884
+User: admin has logged out 2019-02-20T22:03:35.846
+User: AdMIn has logged in 2019-02-20T22:04:03.723
+User: AdMIn has logged out 2019-02-20T22:04:16.194
+User: admin has logged in 2019-02-20T22:04:21.975
+User: admin has logged out 2019-02-20T22:04:23.342
+User: admin with Role: 5 added to database 2019-02-20T22:08:52.801
+User: manager with Role: 4 added to database 2019-02-20T22:08:52.823
+User: staff with Role: 3 added to database 2019-02-20T22:08:52.845
+User: client1 with Role: 2 added to database 2019-02-20T22:08:52.866
+User: client2 with Role: 2 added to database 2019-02-20T22:08:52.889
+User: AdMiN1 with Role: 2 added to database 2019-02-20T22:09:03.061
+User: admin with Role: 5 added to database 2019-02-20T22:11:52.425
+User: manager with Role: 4 added to database 2019-02-20T22:11:52.450
+User: staff with Role: 3 added to database 2019-02-20T22:11:52.474
+User: client1 with Role: 2 added to database 2019-02-20T22:11:52.503
+User: client2 with Role: 2 added to database 2019-02-20T22:11:52.528
+User: AdMIn has logged in 2019-02-20T22:12:02.515
+User: AdMIn accessing adminHomePnl 2019-02-20T22:12:02.521
+User: AdMIn has logged out 2019-02-20T22:12:06.546
+User: ADMIN attempted to logged in 2019-02-20T22:12:21.381
+User: admin with Role: 5 added to database 2019-02-20T22:17:25.009
+User: manager with Role: 4 added to database 2019-02-20T22:17:25.031
+User: staff with Role: 3 added to database 2019-02-20T22:17:25.054
+User: client1 with Role: 2 added to database 2019-02-20T22:17:25.081
+User: client2 with Role: 2 added to database 2019-02-20T22:17:25.106
+User: admin with Role: 5 added to database 2019-02-20T22:17:31.212
+User: manager with Role: 4 added to database 2019-02-20T22:17:31.243
+User: staff with Role: 3 added to database 2019-02-20T22:17:31.267
+User: client1 with Role: 2 added to database 2019-02-20T22:17:31.290
+User: client2 with Role: 2 added to database 2019-02-20T22:17:31.311
+User: CLiEnT3 with Role: 2 added to database 2019-02-20T22:18:13.380
+User: client3 has logged in 2019-02-20T22:18:26.195
+User: CLiEnT3 accessing clientHomePnl 2019-02-20T22:18:26.201
+User: CLiEnT3 has logged out 2019-02-20T22:18:36.458
+User: admin with Role: 5 added to database 2019-02-20T22:19:51.470
+User: manager with Role: 4 added to database 2019-02-20T22:19:51.509
+User: staff with Role: 3 added to database 2019-02-20T22:19:51.533
+User: client1 with Role: 2 added to database 2019-02-20T22:19:51.559
+User: client2 with Role: 2 added to database 2019-02-20T22:19:51.582
+User: manaGer has logged in 2019-02-20T22:20:11.934
+User: manager accessing managerHomePnl 2019-02-20T22:20:11.940
+ERROR User: manager with Role: 4 tried to access clientHomePnl 2019-02-20T22:20:13.348
+ERROR User: manager with Role: 4 tried to access staffHomePnl 2019-02-20T22:20:15.914
+ERROR User: manager with Role: 4 tried to access adminHomePnl 2019-02-20T22:20:18.725
+ERROR User: manager with Role: 4 tried to access clientHomePnl 2019-02-20T22:20:21.334
+ERROR User: manager with Role: 4 tried to access clientHomePnl 2019-02-20T22:20:21.718
+ERROR User: manager with Role: 4 tried to access staffHomePnl 2019-02-20T22:20:23.028
+ERROR User: manager with Role: 4 tried to access adminHomePnl 2019-02-20T22:20:23.643
+User: manager has logged out 2019-02-20T22:20:32.495
+User: admin with Role: 5 added to database 2019-02-20T22:27:06.671
+User: manager with Role: 4 added to database 2019-02-20T22:27:06.722
+User: staff with Role: 3 added to database 2019-02-20T22:27:06.767
+User: client1 with Role: 2 added to database 2019-02-20T22:27:06.807
+User: client2 with Role: 2 added to database 2019-02-20T22:27:06.837
+User: AdmIn attempted to logged in 2019-02-20T22:27:17.496
+User: admin has logged in 2019-02-20T22:27:24.404
+User: admin accessing adminHomePnl 2019-02-20T22:27:24.410
+User: admin has logged out 2019-02-20T22:27:25.963
+User: manager1 with Role: 2 added to database 2019-02-20T22:30:23.363
+User: Manager1 attempted to logged in 2019-02-20T22:30:32.176
+User: manager1 attempted to logged in 2019-02-20T22:30:42.183
+User: ewqdq attempted to logged in 2019-02-20T22:31:00.652
+User: admin with Role: 5 added to database 2019-02-20T22:31:09.838
+User: manager with Role: 4 added to database 2019-02-20T22:31:09.864
+User: staff with Role: 3 added to database 2019-02-20T22:31:09.890
+User: client1 with Role: 2 added to database 2019-02-20T22:31:09.915
+User: client2 with Role: 2 added to database 2019-02-20T22:31:09.938
+User: admin attempted to logged in 2019-02-20T22:31:15.434
+User: admin has logged in 2019-02-20T22:41:47.353
+User: admin accessing adminHomePnl 2019-02-20T22:41:47.358
+User: admin has logged out 2019-02-20T22:41:53.608
+User: cLient2 attempted to logged in 2019-02-20T22:42:06.121
+User: client2 has logged in 2019-02-20T22:42:13.190
+User: client2 accessing clientHomePnl 2019-02-20T22:42:13.194
+User: admin with Role: 5 added to database 2019-02-20T22:42:24.528
+User: manager with Role: 4 added to database 2019-02-20T22:42:24.552
+User: staff with Role: 3 added to database 2019-02-20T22:42:24.574
+User: client1 with Role: 2 added to database 2019-02-20T22:42:24.596
+User: client2 with Role: 2 added to database 2019-02-20T22:42:24.618
+User: admin with Role: 5 added to database 2019-02-20T22:42:57.497
+User: manager with Role: 4 added to database 2019-02-20T22:42:57.534
+User: staff with Role: 3 added to database 2019-02-20T22:42:57.561
+User: client1 with Role: 2 added to database 2019-02-20T22:42:57.589
+User: client2 with Role: 2 added to database 2019-02-20T22:42:57.614
+User: admin has logged in 2019-02-20T22:43:28.388
+User: admin accessing adminHomePnl 2019-02-20T22:43:28.394
+User: admin has logged out 2019-02-20T22:43:32.059
+User: manager has logged in 2019-02-20T22:43:42.066
+User: manager accessing managerHomePnl 2019-02-20T22:43:42.069
+User: manager has logged out 2019-02-20T22:43:43.721
