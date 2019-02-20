@@ -129,7 +129,7 @@ public class SQLite {
     }
     
     public boolean checkUserExists(String username){
-        String sql = "SELECT username FROM users WHERE username='" + username +"';";
+        String sql = "SELECT username FROM users WHERE username='" + username.toLowerCase() +"' COLLATE NOCASE;";
         
         //System.out.println(sql);
         
@@ -178,7 +178,7 @@ public class SQLite {
     }
     
     public int getRole(String username){
-        String sql = "SELECT role FROM users WHERE username='" + username +"';";
+        String sql = "SELECT role FROM users WHERE username='" + username + "';";
         
         //System.out.println(sql);
         
