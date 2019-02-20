@@ -1,6 +1,11 @@
 
 package View;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Login extends javax.swing.JPanel {
 
     public Frame frame;
@@ -104,12 +109,18 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        if(frame.checkValidLogin(username.getText(), String.valueOf(password.getPassword()))){
-            frame.mainNav(username.getText());
-            clearFields();
-        }
-        else{
-            errorField.setText("Please Try Again");
+        try {
+            if(frame.checkValidLogin(username.getText(), String.valueOf(password.getPassword()))){
+                frame.mainNav(username.getText());
+                clearFields();
+            }
+            else{
+                errorField.setText("Please Try Again");
+            }
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InvalidKeySpecException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_loginActionPerformed
 

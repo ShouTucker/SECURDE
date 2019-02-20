@@ -6,3 +6,258 @@ User: client2 with Role: 2 added to database 2019-02-19T01:52:00.624
 User: client1 has logged in 2019-02-19T01:52:14.902
 User: client1 accessing clientHomePnl 2019-02-19T01:52:14.909
 User: client1 has logged out 2019-02-19T01:52:18.303
+User: admin with Role: 5 added to database 2019-02-20T12:19:11.943
+User: manager with Role: 4 added to database 2019-02-20T12:19:12.114
+User: staff with Role: 3 added to database 2019-02-20T12:19:12.220
+User: client1 with Role: 2 added to database 2019-02-20T12:19:12.361
+User: client2 with Role: 2 added to database 2019-02-20T12:19:12.479
+User: admin with Role: 5 added to database 2019-02-20T12:26:18.135
+User: manager with Role: 4 added to database 2019-02-20T12:26:18.519
+User: staff with Role: 3 added to database 2019-02-20T12:26:18.883
+User: client1 with Role: 2 added to database 2019-02-20T12:26:19.035
+User: client2 with Role: 2 added to database 2019-02-20T12:26:19.152
+User: admin with Role: 5 added to database 2019-02-20T12:37:41.869
+User: manager with Role: 4 added to database 2019-02-20T12:37:41.962
+User: staff with Role: 3 added to database 2019-02-20T12:37:42.057
+User: client1 with Role: 2 added to database 2019-02-20T12:37:42.270
+User: client2 with Role: 2 added to database 2019-02-20T12:37:42.620
+User: admin with Role: 5 added to database 2019-02-20T12:41:48.195
+User: manager with Role: 4 added to database 2019-02-20T12:41:48.321
+User: staff with Role: 3 added to database 2019-02-20T12:41:48.458
+User: client1 with Role: 2 added to database 2019-02-20T12:41:48.576
+User: client2 with Role: 2 added to database 2019-02-20T12:41:48.733
+User: admin with Role: 5 added to database 2019-02-20T12:51:59.148
+User: manager with Role: 4 added to database 2019-02-20T12:51:59.262
+User: staff with Role: 3 added to database 2019-02-20T12:51:59.372
+User: client1 with Role: 2 added to database 2019-02-20T12:51:59.488
+User: client2 with Role: 2 added to database 2019-02-20T12:51:59.604
+User: admin with Role: 5 added to database 2019-02-20T12:53:29.262
+User: manager with Role: 4 added to database 2019-02-20T12:53:29.402
+User: staff with Role: 3 added to database 2019-02-20T12:53:29.523
+User: client1 with Role: 2 added to database 2019-02-20T12:53:29.627
+User: client2 with Role: 2 added to database 2019-02-20T12:53:29.753
+User: admin with Role: 5 added to database 2019-02-20T12:54:26.551
+User: manager with Role: 4 added to database 2019-02-20T12:54:26.687
+User: staff with Role: 3 added to database 2019-02-20T12:54:26.803
+User: client1 with Role: 2 added to database 2019-02-20T12:54:26.910
+User: client2 with Role: 2 added to database 2019-02-20T12:54:27.050
+User: admin with Role: 5 added to database 2019-02-20T12:58:10.807
+User: manager with Role: 4 added to database 2019-02-20T12:58:10.920
+User: staff with Role: 3 added to database 2019-02-20T12:58:11.183
+User: client1 with Role: 2 added to database 2019-02-20T12:58:11.290
+User: client2 with Role: 2 added to database 2019-02-20T12:58:11.407
+User: admin with Role: 5 added to database 2019-02-20T13:01:50.023
+User: manager with Role: 4 added to database 2019-02-20T13:01:50.167
+User: staff with Role: 3 added to database 2019-02-20T13:01:50.284
+User: client1 with Role: 2 added to database 2019-02-20T13:01:50.405
+User: client2 with Role: 2 added to database 2019-02-20T13:01:50.667
+User: admin with Role: 5 added to database 2019-02-20T13:02:53.823
+User: manager with Role: 4 added to database 2019-02-20T13:02:53.932
+User: staff with Role: 3 added to database 2019-02-20T13:02:54.045
+User: client1 with Role: 2 added to database 2019-02-20T13:02:54.148
+User: client2 with Role: 2 added to database 2019-02-20T13:02:54.288
+User: admin with Role: 5 added to database 2019-02-20T13:04:01.835
+User: manager with Role: 4 added to database 2019-02-20T13:04:01.955
+User: staff with Role: 3 added to database 2019-02-20T13:04:02.061
+User: client1 with Role: 2 added to database 2019-02-20T13:04:02.171
+User: client2 with Role: 2 added to database 2019-02-20T13:04:02.485
+User: admin with Role: 5 added to database 2019-02-20T13:23:02.579
+User: manager with Role: 4 added to database 2019-02-20T13:23:02.711
+User: staff with Role: 3 added to database 2019-02-20T13:23:02.954
+User: client1 with Role: 2 added to database 2019-02-20T13:23:03.046
+User: client2 with Role: 2 added to database 2019-02-20T13:23:03.156
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T13:59:28.494
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T13:59:28.645
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T13:59:28.672
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T13:59:28.692
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T13:59:28.714
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:00:13.087
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:00:13.105
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:00:13.123
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:00:13.144
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:00:13.170
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:03:19.023
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:03:19.039
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:03:19.061
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:03:19.077
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:03:19.096
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:05:36.449
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:05:36.494
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:05:36.555
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:05:36.597
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:05:36.644
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:06:17.331
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:06:17.347
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:06:17.369
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:06:17.390
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:06:17.411
+ERROR User: emir with Role: 2 was NOT added to database 2019-02-20T14:12:02.740
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:13:15.167
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:13:15.187
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:13:15.209
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:13:15.232
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:13:15.249
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:13:28.525
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:13:28.544
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:13:28.565
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:13:28.590
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:13:28.618
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:15:58.150
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:15:58.168
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:15:58.189
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:15:58.205
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:15:58.221
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:16:10.892
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:16:10.936
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:16:10.975
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:16:11.014
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:16:11.050
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:21:40.901
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:21:40.939
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:21:40.987
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:21:41.034
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:21:41.079
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:41:02.193
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:41:02.208
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:41:02.227
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:41:02.249
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:41:02.273
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:41:25.839
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:41:25.884
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:41:25.964
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:41:26.018
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:41:26.078
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:42:59.178
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:42:59.196
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:42:59.217
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:42:59.238
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:42:59.256
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:43:23.371
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:43:23.397
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:43:23.418
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:43:23.441
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:43:23.462
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:50:04.045
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:50:04.087
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:50:04.138
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:50:04.182
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:50:04.218
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T14:54:57.165
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T14:54:57.259
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T14:54:57.307
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T14:54:57.372
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T14:54:57.392
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T15:03:36.922
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T15:03:36.943
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T15:03:36.966
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T15:03:36.988
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T15:03:37.010
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T15:04:12.446
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T15:04:12.467
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T15:04:12.492
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T15:04:12.514
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T15:04:12.540
+ERROR User: admin with Role: 5 was NOT added to database 2019-02-20T15:07:17.671
+ERROR User: manager with Role: 4 was NOT added to database 2019-02-20T15:07:17.693
+ERROR User: staff with Role: 3 was NOT added to database 2019-02-20T15:07:17.722
+ERROR User: client1 with Role: 2 was NOT added to database 2019-02-20T15:07:17.746
+ERROR User: client2 with Role: 2 was NOT added to database 2019-02-20T15:07:17.765
+User: admin with Role: 5 added to database 2019-02-20T15:08:48.730
+User: manager with Role: 4 added to database 2019-02-20T15:08:48.861
+User: staff with Role: 3 added to database 2019-02-20T15:08:49.119
+User: client1 with Role: 2 added to database 2019-02-20T15:08:49.272
+User: client2 with Role: 2 added to database 2019-02-20T15:08:49.564
+User: admin with Role: 5 added to database 2019-02-20T15:11:09.504
+User: manager with Role: 4 added to database 2019-02-20T15:11:09.882
+User: staff with Role: 3 added to database 2019-02-20T15:11:10.165
+User: client1 with Role: 2 added to database 2019-02-20T15:11:10.548
+User: client2 with Role: 2 added to database 2019-02-20T15:11:10.811
+User: admin with Role: 5 added to database 2019-02-20T15:13:10.307
+User: manager with Role: 4 added to database 2019-02-20T15:13:10.431
+User: staff with Role: 3 added to database 2019-02-20T15:13:10.582
+User: client1 with Role: 2 added to database 2019-02-20T15:13:10.737
+User: client2 with Role: 2 added to database 2019-02-20T15:13:10.877
+User: admin with Role: 5 added to database 2019-02-20T15:14:28.482
+User: manager with Role: 4 added to database 2019-02-20T15:14:28.647
+User: staff with Role: 3 added to database 2019-02-20T15:14:28.797
+User: client1 with Role: 2 added to database 2019-02-20T15:14:29.016
+User: client2 with Role: 2 added to database 2019-02-20T15:14:29.273
+User: admin with Role: 5 added to database 2019-02-20T15:29:27.806
+User: manager with Role: 4 added to database 2019-02-20T15:29:27.945
+User: staff with Role: 3 added to database 2019-02-20T15:29:28.107
+User: client1 with Role: 2 added to database 2019-02-20T15:29:28.295
+User: client2 with Role: 2 added to database 2019-02-20T15:29:28.402
+User: admin with Role: 5 added to database 2019-02-20T15:30:11.621
+User: manager with Role: 4 added to database 2019-02-20T15:30:11.763
+User: staff with Role: 3 added to database 2019-02-20T15:30:11.898
+User: client1 with Role: 2 added to database 2019-02-20T15:30:12.077
+User: client2 with Role: 2 added to database 2019-02-20T15:30:12.297
+User: admin with Role: 5 added to database 2019-02-20T15:31:29.643
+User: manager with Role: 4 added to database 2019-02-20T15:31:29.757
+User: staff with Role: 3 added to database 2019-02-20T15:31:29.885
+User: client1 with Role: 2 added to database 2019-02-20T15:31:29.993
+User: client2 with Role: 2 added to database 2019-02-20T15:31:30.198
+User: admin with Role: 5 added to database 2019-02-20T15:33:11.961
+User: manager with Role: 4 added to database 2019-02-20T15:33:12.090
+User: staff with Role: 3 added to database 2019-02-20T15:33:12.217
+User: client1 with Role: 2 added to database 2019-02-20T15:33:12.362
+User: client2 with Role: 2 added to database 2019-02-20T15:33:12.504
+User: admin with Role: 5 added to database 2019-02-20T15:35:05.299
+User: manager with Role: 4 added to database 2019-02-20T15:35:05.425
+User: staff with Role: 3 added to database 2019-02-20T15:35:05.544
+User: client1 with Role: 2 added to database 2019-02-20T15:35:05.653
+User: client2 with Role: 2 added to database 2019-02-20T15:35:05.772
+User: admin with Role: 5 added to database 2019-02-20T15:37:27.684
+User: manager with Role: 4 added to database 2019-02-20T15:37:27.849
+User: staff with Role: 3 added to database 2019-02-20T15:37:28.061
+User: client1 with Role: 2 added to database 2019-02-20T15:37:28.218
+User: client2 with Role: 2 added to database 2019-02-20T15:37:28.428
+User: admin with Role: 5 added to database 2019-02-20T15:37:59.111
+User: manager with Role: 4 added to database 2019-02-20T15:37:59.230
+User: staff with Role: 3 added to database 2019-02-20T15:37:59.339
+User: client1 with Role: 2 added to database 2019-02-20T15:37:59.488
+User: client2 with Role: 2 added to database 2019-02-20T15:37:59.640
+User: admin with Role: 5 added to database 2019-02-20T15:38:32.255
+User: manager with Role: 4 added to database 2019-02-20T15:38:32.361
+User: staff with Role: 3 added to database 2019-02-20T15:38:32.479
+User: client1 with Role: 2 added to database 2019-02-20T15:38:32.594
+User: client2 with Role: 2 added to database 2019-02-20T15:38:32.735
+User: admin with Role: 5 added to database 2019-02-20T15:39:10.173
+User: manager with Role: 4 added to database 2019-02-20T15:39:10.335
+User: staff with Role: 3 added to database 2019-02-20T15:39:10.441
+User: client1 with Role: 2 added to database 2019-02-20T15:39:10.537
+User: client2 with Role: 2 added to database 2019-02-20T15:39:10.730
+User: admin with Role: 5 added to database 2019-02-20T16:00:03.656
+User: manager with Role: 4 added to database 2019-02-20T16:00:04.010
+User: staff with Role: 3 added to database 2019-02-20T16:00:04.169
+User: client1 with Role: 2 added to database 2019-02-20T16:00:04.422
+User: client2 with Role: 2 added to database 2019-02-20T16:00:04.675
+User: admin with Role: 5 added to database 2019-02-20T16:01:43.099
+User: manager with Role: 4 added to database 2019-02-20T16:01:43.217
+User: staff with Role: 3 added to database 2019-02-20T16:01:43.324
+User: client1 with Role: 2 added to database 2019-02-20T16:01:43.428
+User: client2 with Role: 2 added to database 2019-02-20T16:01:43.593
+User: admin with Role: 5 added to database 2019-02-20T16:03:03.090
+User: manager with Role: 4 added to database 2019-02-20T16:03:03.252
+User: staff with Role: 3 added to database 2019-02-20T16:03:03.388
+User: client1 with Role: 2 added to database 2019-02-20T16:03:03.504
+User: client2 with Role: 2 added to database 2019-02-20T16:03:03.623
+User: admin with Role: 5 added to database 2019-02-20T16:08:33.835
+User: manager with Role: 4 added to database 2019-02-20T16:08:34.003
+User: staff with Role: 3 added to database 2019-02-20T16:08:34.197
+User: client1 with Role: 2 added to database 2019-02-20T16:08:34.316
+User: client2 with Role: 2 added to database 2019-02-20T16:08:34.472
+User: admin with Role: 5 added to database 2019-02-20T16:10:17.028
+User: manager with Role: 4 added to database 2019-02-20T16:10:17.140
+User: staff with Role: 3 added to database 2019-02-20T16:10:17.255
+User: client1 with Role: 2 added to database 2019-02-20T16:10:17.404
+User: client2 with Role: 2 added to database 2019-02-20T16:10:17.558
+User: client2 has logged in 2019-02-20T16:10:24.742
+User: client2 accessing clientHomePnl 2019-02-20T16:10:24.830
+User: client2 has logged out 2019-02-20T16:10:57.187
+User: admin has logged in 2019-02-20T16:11:10.454
+User: admin accessing adminHomePnl 2019-02-20T16:11:10.476
+User: admin has logged out 2019-02-20T16:13:22.032
+User: emir with Role: 2 added to database 2019-02-20T16:13:29.047
+User: emir has logged in 2019-02-20T16:13:39
+User: emir accessing clientHomePnl 2019-02-20T16:13:39.021

@@ -1,6 +1,11 @@
 
 package View;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Register extends javax.swing.JPanel {
 
     public Frame frame;
@@ -115,7 +120,13 @@ public class Register extends javax.swing.JPanel {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(checkError()){    
-            frame.registerAction(username.getText(), String.valueOf(password.getPassword()), String.valueOf(confpass.getPassword()));
+            try {
+                frame.registerAction(username.getText(), String.valueOf(password.getPassword()), String.valueOf(confpass.getPassword()));
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InvalidKeySpecException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            }
             frame.loginNav();
             clearFields();
         }

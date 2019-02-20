@@ -4,6 +4,8 @@ import Controller.Main;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import javax.swing.WindowConstants;
 
 public class Frame extends javax.swing.JFrame {
@@ -262,7 +264,7 @@ public class Frame extends javax.swing.JFrame {
         frameView.show(Container, "registerPnl");
     }
     
-    public void registerAction(String username, String password, String confpass){
+    public void registerAction(String username, String password, String confpass) throws NoSuchAlgorithmException, InvalidKeySpecException{
         main.sqlite.addUser(username, password);
     }
     
@@ -270,7 +272,7 @@ public class Frame extends javax.swing.JFrame {
         return main.sqlite.checkUserExists(username);
     }
     
-    public boolean checkValidLogin(String username, String password){
+    public boolean checkValidLogin(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException{
         return main.sqlite.loginCheck(username, password);
     }
     

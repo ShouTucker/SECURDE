@@ -4,6 +4,7 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private byte[] salt;
     private int role;
 
     public User(String username, String password){
@@ -11,10 +12,11 @@ public class User {
         this.password = password;
     }
     
-    public User(int id, String username, String password, int role){
+    public User(int id, String username, String password, byte[] salt, int role){
         this.id = id;
         this.username = username;
         this.password = password;
+        this.salt = salt;
         this.role = role;
     }
     
@@ -38,6 +40,14 @@ public class User {
         return password;
     }
 
+    public byte[] getSalt(){
+        return this.salt;
+    }
+    
+    public void setSalt(byte[] salt){
+        this.salt = salt;
+    }
+    
     public void setPassword(String password) {
         this.password = password;
     }

@@ -3,6 +3,8 @@ package Controller;
 
 import Model.User;
 import View.Frame;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 
 
@@ -12,19 +14,19 @@ public class Main {
     public SQLite sqlite;
     public LogWrite logWrite;
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
         new Main().init();
     }
     
-    public void init(){
+    public void init() throws NoSuchAlgorithmException, InvalidKeySpecException{
         // Initialize a driver object
         sqlite = new SQLite();
 
-        // Create a database
+        // Create a database    
         sqlite.createNewDatabase();
         
         // Drop users table if needed
-        //sqlite.dropUserTable();
+        sqlite.dropUserTable();
         
         // Create users table if not exist
         sqlite.createUserTable();
@@ -42,6 +44,7 @@ public class Main {
             System.out.println("===== User " + users.get(nCtr).getId() + " =====");
             System.out.println(" Username: " + users.get(nCtr).getUsername());
             System.out.println(" Password: " + users.get(nCtr).getPassword());
+            System.out.println(" salt: " + users.get(nCtr).getSalt());
             System.out.println(" Role: " + users.get(nCtr).getRole());
         }
         
