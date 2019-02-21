@@ -109,7 +109,10 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        if(!frame.checkAttempts(username.getText())){
+        if(username.getText().equals("") || String.valueOf(password.getPassword()).equals("")){
+            clearUsernamePassword();
+            errorField.setText("Username or password is empty!");
+        }else if(!frame.checkAttempts(username.getText())){
             clearUsernamePassword();
             errorField.setText("Too Much Attempts!");
         }else try {

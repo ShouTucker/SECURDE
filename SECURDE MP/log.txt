@@ -1,8 +1,8 @@
-User: admin with Role: 5 added to database 2019-02-21T09:12:11.233
-User: ernesto with Role: 5 added to database 2019-02-21T09:12:11.424
-User: james with Role: 5 added to database 2019-02-21T09:12:11.660
-User: emir with Role: 5 added to database 2019-02-21T09:12:11.831
-User: manager with Role: 4 added to database 2019-02-21T09:12:11.963
-User: staff with Role: 3 added to database 2019-02-21T09:12:12.066
-User: client1 with Role: 2 added to database 2019-02-21T09:12:12.218
-User: client2 with Role: 2 added to database 2019-02-21T09:12:12.318
+User: admin with Role: 5 added to database 2019-02-21T11:29:20.400
+User: ernesto with Role: 5 added to database 2019-02-21T11:29:20.549
+User: james with Role: 5 added to database 2019-02-21T11:29:20.766
+User: emir with Role: 5 added to database 2019-02-21T11:29:20.947
+User: manager with Role: 4 added to database 2019-02-21T11:29:21.080
+User: staff with Role: 3 added to database 2019-02-21T11:29:21.202
+User: client1 with Role: 2 added to database 2019-02-21T11:29:21.337
+User: client2 with Role: 2 added to database 2019-02-21T11:29:21.492
