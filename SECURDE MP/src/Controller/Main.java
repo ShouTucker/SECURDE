@@ -26,17 +26,23 @@ public class Main {
         //sqlite.createNewDatabase();
         
         // Drop users table if needed
-        //sqlite.dropUserTable();
+        sqlite.dropUserTable();
+        
+        //delete all logs
+        new LogWrite().deleteAllLogs();
         
         // Create users table if not exist
-        //sqlite.createUserTable();
+        sqlite.createUserTable();
         
         // Add users
-        //sqlite.addUser("admin", "qwerty1234" , 5);
-        //sqlite.addUser("manager", "qwerty1234", 4);
-        //sqlite.addUser("staff", "qwerty1234", 3);
-        //sqlite.addUser("client1", "qwerty1234", 2);
-        //sqlite.addUser("client2", "qwerty1234", 2);
+        sqlite.addUser("admin", "qwerty1234" , 5);
+        sqlite.addUser("ernesto", "qwertyui" , 5);
+        sqlite.addUser("james", "qwertyui" , 5);
+        sqlite.addUser("emir", "qwertyui" , 5);
+        sqlite.addUser("manager", "qwerty1234", 4);
+        sqlite.addUser("staff", "qwerty1234", 3);
+        sqlite.addUser("client1", "qwerty1234", 2);
+        sqlite.addUser("client2", "qwerty1234", 2);
         
         // Get users
         ArrayList<User> users = sqlite.getUsers();

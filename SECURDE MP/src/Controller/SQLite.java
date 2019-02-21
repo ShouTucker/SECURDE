@@ -157,6 +157,7 @@ public class SQLite {
             while(rs.next()){
                 if(validatePassword(password, rs.getString("password"))){
                     new LogWrite().writeToLog("User: " + username + " has logged in");
+                    new LogWrite().deleteAttempts();
                     return true;
                 }
             }

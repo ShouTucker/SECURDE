@@ -61,7 +61,7 @@ public class LogWrite {
         }
         return -1;
     }
-    public void deleteLogs(){
+    public void deleteAllLogs(){
         try{
             Path fileToDeletePath = Paths.get("attempts.txt");
             Files.delete(fileToDeletePath);
@@ -73,6 +73,14 @@ public class LogWrite {
             Files.delete(fileToDeletePath);
         }catch(Exception e){
             System.err.println("Error with deleting log.txt");
+        }
+    }
+    public void deleteAttempts(){
+        try{
+            Path fileToDeletePath = Paths.get("attempts.txt");
+            Files.delete(fileToDeletePath);
+        }catch(Exception e){
+            System.err.println("Error with deleting attempts.txt");
         }
     }
 }
