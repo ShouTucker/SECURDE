@@ -154,11 +154,21 @@ public class Register extends javax.swing.JPanel {
         return String.valueOf(password.getPassword()).equals("");
     }
     
+    private boolean checkUsernameIsBlank(){
+        return username.getText().equals("");
+    }
+    
     private boolean checkError(){
+        if(checkUsernameIsBlank()){
+            errorField.setText("Username Field is Blank");
+            return false;
+        }
+        
         if(checkPassIsBlank()){
             errorField.setText("Password Field is Blank");
             return false;
         }
+        
         if(!frame.checkUniqueUserNav(username.getText())){
             errorField.setText("Username Already Exists");
             return false;
