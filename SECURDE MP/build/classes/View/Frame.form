@@ -41,9 +41,9 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="801" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="980" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="HomePnl" alignment="0" max="32767" attributes="0"/>
+                  <Component id="HomePnl" alignment="0" pref="980" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

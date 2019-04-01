@@ -1,9 +1,23 @@
-User: admin with Role: 5 added to database 2019-02-21T14:23:37.674
-User: ernesto with Role: 5 added to database 2019-02-21T14:23:37.722
-User: james with Role: 5 added to database 2019-02-21T14:23:37.770
-User: emir with Role: 5 added to database 2019-02-21T14:23:37.846
-User: manager with Role: 4 added to database 2019-02-21T14:23:37.926
-User: staff with Role: 3 added to database 2019-02-21T14:23:38.031
-User: client1 with Role: 2 added to database 2019-02-21T14:23:38.079
-User: client2 with Role: 2 added to database 2019-02-21T14:23:38.123
-User: user with Role: 2 added to database 2019-02-21T14:24:48.580
+User: admin with Role: 5 added to database 2019-04-01T10:45:22.826
+User: ernesto with Role: 5 added to database 2019-04-01T10:45:22.851
+User: james with Role: 5 added to database 2019-04-01T10:45:22.875
+User: emir with Role: 5 added to database 2019-04-01T10:45:22.899
+User: manager with Role: 4 added to database 2019-04-01T10:45:22.920
+User: staff with Role: 3 added to database 2019-04-01T10:45:22.941
+User: client1 with Role: 2 added to database 2019-04-01T10:45:22.966
+User: client2 with Role: 2 added to database 2019-04-01T10:45:22.999
+User: admin has logged in 2019-04-01T10:46:21.173
+User: admin accessing adminHomePnl 2019-04-01T10:46:21.178
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-01T10:46:33.546
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-01T10:46:34.034
+User: admin has logged in 2019-04-01T10:58:44.890
+User: admin accessing adminHomePnl 2019-04-01T10:58:44.897
+User: admin has logged in 2019-04-01T11:03:07.315
+User: admin accessing adminHomePnl 2019-04-01T11:03:07.321
+ERROR User: admin with Role: 5 tried to access managerHomePnl 2019-04-01T11:03:12.648
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-01T11:03:13.048
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-01T11:03:13.400
+User: admin has logged out 2019-04-01T11:03:26.585
+User: test with Role: 2 added to database 2019-04-01T11:03:56.800
+User: test has logged in 2019-04-01T11:04:02.502
+User: test accessing clientHomePnl 2019-04-01T11:04:02.506
