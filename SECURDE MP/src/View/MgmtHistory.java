@@ -22,6 +22,8 @@ public class MgmtHistory extends javax.swing.JPanel {
     public SQLite sqlite;
     public DefaultTableModel tableModel;
     
+    private String username;
+    
     public MgmtHistory(SQLite sqlite) {
         initComponents();
         this.sqlite = sqlite;
@@ -35,11 +37,11 @@ public class MgmtHistory extends javax.swing.JPanel {
         table.getColumnModel().getColumn(5).setCellRenderer(rightAlign);
         
 //        UNCOMMENT TO DISABLE BUTTONS
-//        searchBtn.setVisible(false);
-//        reportBtn.setVisible(false);
+        searchBtn.setVisible(false);
+        reloadBtn.setVisible(false);
     }
 
-    public void init(){
+    public void init(String username){
 //      CLEAR TABLE
         for(int nCtr = tableModel.getRowCount(); nCtr > 0; nCtr--){
             tableModel.removeRow(0);
@@ -57,6 +59,18 @@ public class MgmtHistory extends javax.swing.JPanel {
                 product.getPrice() * history.get(nCtr).getStock(), 
                 history.get(nCtr).getTimestamp()
             });
+        }
+        
+        this.username = username;
+        prepareHistory();
+    }
+    
+    private void prepareHistory(){
+        final int role = getUserRole(username);
+        
+        if(role == 5 || role == 4){
+            searchBtn.setVisible(true);
+            reloadBtn.setVisible(true);
         }
     }
     
@@ -197,9 +211,12 @@ public class MgmtHistory extends javax.swing.JPanel {
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void reloadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reloadBtnActionPerformed
-        init();
+        init(username);
     }//GEN-LAST:event_reloadBtnActionPerformed
 
+    public int getUserRole(String username){
+        return sqlite.getRole(username);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;

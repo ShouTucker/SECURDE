@@ -25,6 +25,8 @@ public class MgmtUser extends javax.swing.JPanel {
     public SQLite sqlite;
     public DefaultTableModel tableModel;
     
+    private String username;
+    
     public MgmtUser(SQLite sqlite) {
         initComponents();
         this.sqlite = sqlite;
@@ -32,20 +34,31 @@ public class MgmtUser extends javax.swing.JPanel {
         table.getTableHeader().setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 14));
         
 //        UNCOMMENT TO DISABLE BUTTONS
-//        editBtn.setVisible(false);
-//        deleteBtn.setVisible(false);
-//        lockBtn.setVisible(false);
-//        chgpassBtn.setVisible(false);
+        editRoleBtn.setVisible(false);
+        deleteBtn.setVisible(false);
+        lockBtn.setVisible(false);
+        chgpassBtn.setVisible(false);
     }
     
-    public void init(){
+    public void init(String username){
         //      CLEAR TABLE
         for(int nCtr = tableModel.getRowCount(); nCtr > 0; nCtr--){
             tableModel.removeRow(0);
         }
         
 //      LOAD CONTENTS
-        ArrayList<User> users = sqlite.getUsers();
+        ArrayList<User> users;
+        if(getUserRole(username) == 5)
+            users = sqlite.getUsers();
+        else if(getUserRole(username) == 4)
+        {
+            users = sqlite.getStaff();
+            users.add(sqlite.getUser(username));
+        }
+        else{
+            users = new ArrayList<>();
+            users.add(sqlite.getUser(username));
+        }
         for(int nCtr = 0; nCtr < users.size(); nCtr++){
             tableModel.addRow(new Object[]{
                 users.get(nCtr).getUsername(), 
@@ -53,8 +66,39 @@ public class MgmtUser extends javax.swing.JPanel {
                 users.get(nCtr).getRole(), 
                 users.get(nCtr).getLocked()});
         }
+        
+        this.username = username;
+        prepareUser();
     }
 
+    private void prepareUser(){
+        final int role = getUserRole(username);
+                
+        if(role == 4 || role == 5){
+            editRoleBtn.setVisible(true);
+        }
+        
+        if(role == 5){
+            deleteBtn.setVisible(true);
+            lockBtn.setVisible(true);
+        }
+        
+        else if(role == 2 || role == 3 || role == 4){
+            table.getColumnModel().getColumn(1).setWidth(0);
+            table.getColumnModel().getColumn(1).setMinWidth(0);
+            table.getColumnModel().getColumn(1).setMaxWidth(0);
+            
+            table.getColumnModel().getColumn(3).setWidth(0);
+            table.getColumnModel().getColumn(3).setMinWidth(0);
+            table.getColumnModel().getColumn(3).setMaxWidth(0);
+        }
+        
+        if(role == 2 || role == 3 || role == 4 || role == 5){
+            chgpassBtn.setVisible(true);
+        }
+      
+    }
+    
     public void designer(JTextField component, String text){
         component.setSize(70, 600);
         component.setFont(new java.awt.Font("Tahoma", 0, 18));
@@ -240,6 +284,9 @@ public class MgmtUser extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_chgpassBtnActionPerformed
 
+    public int getUserRole(String username){
+        return sqlite.getRole(username);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton chgpassBtn;

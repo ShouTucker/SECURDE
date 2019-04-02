@@ -12,6 +12,7 @@ public class Frame extends javax.swing.JFrame {
 
     public Frame() {
         initComponents();
+        disableHomeAccess();
     }
 
     @SuppressWarnings("unchecked")
@@ -226,11 +227,6 @@ public class Frame extends javax.swing.JFrame {
         loginPnl.frame = this;
         registerPnl.frame = this;
         
-        adminHomePnl.init(main.sqlite);
-        clientHomePnl.init(main.sqlite);
-        managerHomePnl.init(main.sqlite);
-        staffHomePnl.init(main.sqlite);
-        
         Container.setLayout(frameView);
         Container.add(loginPnl, "loginPnl");
         Container.add(registerPnl, "registerPnl");
@@ -238,11 +234,7 @@ public class Frame extends javax.swing.JFrame {
         frameView.show(Container, "loginPnl");
         
         Content.setLayout(contentView);
-        Content.add(adminHomePnl, "adminHomePnl");
-        Content.add(managerHomePnl, "managerHomePnl");
-        Content.add(staffHomePnl, "staffHomePnl");
-        Content.add(clientHomePnl, "clientHomePnl");
-        
+              
         this.setVisible(true);
     }
     
@@ -293,6 +285,17 @@ public class Frame extends javax.swing.JFrame {
     private void prepareHome(){
         final int role = getUserRole(username);
         //System.out.println(username + " with role " + role);
+                      
+        adminHomePnl.init(main.sqlite, username);
+        clientHomePnl.init(main.sqlite, username);
+        managerHomePnl.init(main.sqlite, username);
+        staffHomePnl.init(main.sqlite, username);    
+        
+        Content.add(adminHomePnl, "adminHomePnl");
+        Content.add(managerHomePnl, "managerHomePnl");
+        Content.add(staffHomePnl, "staffHomePnl");
+        Content.add(clientHomePnl, "clientHomePnl"); 
+        
         switch (role) {
             case 2:
                 clientBtn.setVisible(true);
@@ -312,12 +315,13 @@ public class Frame extends javax.swing.JFrame {
                 break;
             default:
                 break;
-        }
+        } 
     }
     
     private void checkAccess(String content, int roleRequired){
-        if(getUserRole(username) == roleRequired)
+        if(getUserRole(username) == roleRequired){
             viewContent(content);
+        }
         else
             writeToLog("ERROR User: " + username + " with Role: " + getUserRole(username) + " tried to access " + content);
     }

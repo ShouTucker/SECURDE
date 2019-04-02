@@ -21,3 +21,141 @@ User: admin has logged out 2019-04-01T11:03:26.585
 User: test with Role: 2 added to database 2019-04-01T11:03:56.800
 User: test has logged in 2019-04-01T11:04:02.502
 User: test accessing clientHomePnl 2019-04-01T11:04:02.506
+User: admin has logged in 2019-04-01T15:35:44.734
+User: admin accessing adminHomePnl 2019-04-01T15:35:44.740
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-01T15:35:52.590
+User: admin has logged in 2019-04-01T15:37:28.153
+User: admin accessing adminHomePnl 2019-04-01T15:37:28.161
+User: admin has logged in 2019-04-01T16:10:15.849
+User: admin accessing adminHomePnl 2019-04-01T16:10:15.856
+User: admin has logged in 2019-04-02T08:01:58.897
+User: admin accessing adminHomePnl 2019-04-02T08:01:58.904
+User: admin has logged in 2019-04-02T09:47:56.894
+User: admin accessing adminHomePnl 2019-04-02T09:47:56.900
+User: admin has logged in 2019-04-02T09:52:59.608
+User: admin accessing adminHomePnl 2019-04-02T09:52:59.613
+User: admin has logged out 2019-04-02T09:53:08.901
+User: test has logged in 2019-04-02T09:53:13.046
+User: test accessing clientHomePnl 2019-04-02T09:53:13.050
+User: test has logged out 2019-04-02T09:53:23.134
+User: staff has logged in 2019-04-02T09:53:29.303
+User: staff accessing staffHomePnl 2019-04-02T09:53:29.307
+User: test has logged in 2019-04-02T09:55:44.718
+User: test accessing clientHomePnl 2019-04-02T09:55:44.724
+User: test has logged in 2019-04-02T09:56:58.353
+User: test accessing clientHomePnl 2019-04-02T09:56:58.360
+User: test has logged in 2019-04-02T09:57:22.051
+User: test accessing clientHomePnl 2019-04-02T09:57:22.057
+User: test has logged in 2019-04-02T09:57:49.295
+User: test accessing clientHomePnl 2019-04-02T09:57:49.302
+User: test has logged in 2019-04-02T09:58:38.234
+User: test accessing clientHomePnl 2019-04-02T09:58:38.239
+User: test has logged in 2019-04-02T09:59:27.939
+User: test accessing clientHomePnl 2019-04-02T09:59:27.945
+User: test has logged in 2019-04-02T10:01:17.057
+User: test accessing clientHomePnl 2019-04-02T10:01:17.064
+User: test has logged in 2019-04-02T10:01:54.558
+User: test accessing clientHomePnl 2019-04-02T10:01:54.564
+User: test has logged in 2019-04-02T10:24:12.003
+User: test accessing clientHomePnl 2019-04-02T10:24:12.011
+User: test has logged in 2019-04-02T10:24:45.255
+User: test accessing clientHomePnl 2019-04-02T10:24:45.327
+User: test has logged in 2019-04-02T10:30:12.959
+User: test accessing clientHomePnl 2019-04-02T10:30:13.028
+User: manager has logged in 2019-04-02T10:30:56.089
+User: manager accessing managerHomePnl 2019-04-02T10:30:56.160
+User: client1 has logged in 2019-04-02T10:38:41.057
+User: client1 accessing clientHomePnl 2019-04-02T10:38:41.124
+User: admin has logged in 2019-04-02T10:45:50.397
+User: admin accessing adminHomePnl 2019-04-02T10:45:50.467
+User: admin has logged out 2019-04-02T10:47:11.838
+User: manager has logged in 2019-04-02T10:47:20.907
+User: manager accessing managerHomePnl 2019-04-02T10:47:20.966
+User: manager has logged in 2019-04-02T10:49:00.101
+User: manager accessing managerHomePnl 2019-04-02T10:49:00.170
+User: admin has logged in 2019-04-02T11:05:53.146
+User: admin has logged in 2019-04-02T11:06:36.170
+User: admin accessing adminHomePnl 2019-04-02T11:06:36.249
+User: test attempted to logged in 2019-04-02T11:06:51.238
+User: test has logged in 2019-04-02T11:06:55.929
+User: test accessing clientHomePnl 2019-04-02T11:06:56.007
+User: manager has logged in 2019-04-02T11:10:21.780
+User: manager accessing managerHomePnl 2019-04-02T11:10:21.861
+User: manager has logged out 2019-04-02T11:10:38.178
+User: staff has logged in 2019-04-02T11:10:46.215
+User: staff accessing staffHomePnl 2019-04-02T11:10:46.285
+User: admin has logged in 2019-04-02T12:19:26.993
+User: admin accessing adminHomePnl 2019-04-02T12:19:27.067
+User: admin has logged out 2019-04-02T12:19:31.396
+User: test has logged in 2019-04-02T12:19:35.120
+User: test accessing clientHomePnl 2019-04-02T12:19:35.191
+User: test has logged in 2019-04-02T12:24:36.213
+User: test accessing clientHomePnl 2019-04-02T12:24:36.290
+User: test has logged out 2019-04-02T12:24:42.362
+User: admin has logged in 2019-04-02T12:24:51.179
+User: admin accessing adminHomePnl 2019-04-02T12:24:51.241
+User: admin has logged out 2019-04-02T12:25:02.851
+User: test has logged in 2019-04-02T12:25:07.073
+User: test accessing clientHomePnl 2019-04-02T12:25:07.146
+User: test has logged in 2019-04-02T12:29:29.128
+User: test accessing clientHomePnl 2019-04-02T12:29:29.203
+User: test has logged in 2019-04-02T12:29:54.861
+User: test accessing clientHomePnl 2019-04-02T12:29:54.941
+User: admin attempted to logged in 2019-04-02T12:30:41.923
+User: test has logged in 2019-04-02T12:30:47.294
+User: test accessing clientHomePnl 2019-04-02T12:30:47.374
+User: test has logged out 2019-04-02T12:36:47.847
+User: staff has logged in 2019-04-02T12:37:02.002
+User: staff accessing staffHomePnl 2019-04-02T12:37:02.057
+User: staff has logged out 2019-04-02T12:41:10.519
+User: manager has logged in 2019-04-02T12:41:21.837
+User: manager accessing managerHomePnl 2019-04-02T12:41:21.897
+User: test has logged in 2019-04-02T13:29:42.254
+User: test accessing clientHomePnl 2019-04-02T13:29:42.329
+User: test has logged in 2019-04-02T13:32:49.411
+User: test accessing clientHomePnl 2019-04-02T13:32:49.489
+User: test has logged in 2019-04-02T13:33:38.077
+User: test accessing clientHomePnl 2019-04-02T13:33:38.165
+User: test has logged in 2019-04-02T13:34:35.439
+User: test accessing clientHomePnl 2019-04-02T13:34:35.517
+User: test has logged in 2019-04-02T13:34:59.841
+User: test accessing clientHomePnl 2019-04-02T13:34:59.922
+User: test has logged in 2019-04-02T13:35:30.288
+User: test accessing clientHomePnl 2019-04-02T13:35:30.369
+User: admin has logged in 2019-04-02T13:37:14.035
+User: admin accessing adminHomePnl 2019-04-02T13:37:14.114
+User: test has logged in 2019-04-02T13:37:47.531
+User: test accessing clientHomePnl 2019-04-02T13:37:47.611
+User: test has logged in 2019-04-02T13:39:56.296
+User: test accessing clientHomePnl 2019-04-02T13:39:56.375
+User: test has logged in 2019-04-02T13:59:22.527
+User: test accessing clientHomePnl 2019-04-02T13:59:22.602
+User: test has logged out 2019-04-02T13:59:24.980
+User: staff has logged in 2019-04-02T13:59:39.693
+User: staff accessing staffHomePnl 2019-04-02T13:59:39.762
+User: staff has logged out 2019-04-02T13:59:45.516
+User: manager has logged in 2019-04-02T13:59:57.537
+User: manager accessing managerHomePnl 2019-04-02T13:59:57.604
+User: admin has logged in 2019-04-02T14:02:06.848
+User: admin accessing adminHomePnl 2019-04-02T14:02:06.932
+User: test has logged in 2019-04-02T17:21:30.082
+User: test accessing clientHomePnl 2019-04-02T17:21:30.167
+User: test has logged out 2019-04-02T17:22:33.373
+User: manager has logged in 2019-04-02T17:22:43.589
+User: manager accessing managerHomePnl 2019-04-02T17:22:43.644
+User: manager has logged in 2019-04-02T17:39:21.704
+User: manager accessing managerHomePnl 2019-04-02T17:39:21.778
+User: manager has logged in 2019-04-02T17:39:54.724
+User: manager accessing managerHomePnl 2019-04-02T17:39:54.806
+User: manager has logged out 2019-04-02T17:40:00.987
+User: admin has logged in 2019-04-02T17:40:07.009
+User: admin accessing adminHomePnl 2019-04-02T17:40:07.073
+User: admin has logged out 2019-04-02T17:40:11.144
+User: test has logged in 2019-04-02T17:40:16.964
+User: test accessing clientHomePnl 2019-04-02T17:40:17.027
+User: test has logged out 2019-04-02T17:46:33.631
+User: admin has logged in 2019-04-02T17:46:39.433
+User: admin accessing adminHomePnl 2019-04-02T17:46:39.489
+User: admin has logged in 2019-04-02T17:55:33.126
+User: admin accessing adminHomePnl 2019-04-02T17:55:33.199
+User: admin has logged out 2019-04-02T17:55:38.310

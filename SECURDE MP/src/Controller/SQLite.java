@@ -176,8 +176,7 @@ public class SQLite {
                 users.add(new User(rs.getInt("id"),
                 rs.getString("username"),
                 rs.getString("password"),
-
-                        rs.getBytes("salt"),
+                rs.getBytes("salt"),
                 rs.getInt("role"),
                 rs.getInt("locked")));          
             }
@@ -237,6 +236,46 @@ public class SQLite {
         } catch (Exception ex) {
             logWrite.writeToLog("ERROR User: " + username + " was not deleted.");
         }
+    }
+    
+    public User getUser(String username){
+        String sql = "SELECT id, username, password, salt, role, locked FROM users WHERE username='" + username.toLowerCase() +"' COLLATE NOCASE;";
+        User user = null;
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            user = new User(rs.getInt("id"),
+            rs.getString("username"),
+            rs.getString("password"),
+            rs.getBytes("salt"),
+            rs.getInt("role"),
+            rs.getInt("locked"));
+            
+        } catch (Exception ex) {ex.printStackTrace();}
+        return user;
+    }
+    
+    public ArrayList<User> getStaff(){
+        String sql = "SELECT id, username, password, salt, role, locked FROM users WHERE role=3";
+        ArrayList<User> users = new ArrayList<User>();
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                users.add(new User(rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getBytes("salt"),
+                rs.getInt("role"),
+                rs.getInt("locked")));          
+            }
+            
+        } catch (Exception ex) {ex.printStackTrace();}
+        return users;
     }
     
     public boolean checkUserExists(String username){

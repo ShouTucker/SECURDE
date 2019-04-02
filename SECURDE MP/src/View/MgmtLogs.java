@@ -19,6 +19,8 @@ public class MgmtLogs extends javax.swing.JPanel {
     public SQLite sqlite;
     public DefaultTableModel tableModel;
     
+    private String username;
+    
     public MgmtLogs(SQLite sqlite) {
         initComponents();
         this.sqlite = sqlite;
@@ -26,11 +28,11 @@ public class MgmtLogs extends javax.swing.JPanel {
         table.getTableHeader().setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 14));
         
 //        UNCOMMENT TO DISABLE BUTTONS
-//        clearBtn.setVisible(false);
-//        debugBtn.setVisible(false);
+        clearBtn.setVisible(false);
+        debugBtn.setVisible(false);
     }
 
-    public void init(){
+    public void init(String username){
         //      CLEAR TABLE
         for(int nCtr = tableModel.getRowCount(); nCtr > 0; nCtr--){
             tableModel.removeRow(0);
@@ -45,7 +47,20 @@ public class MgmtLogs extends javax.swing.JPanel {
                 logs.get(nCtr).getDesc(), 
                 logs.get(nCtr).getTimestamp()});
         }
+        
+        this.username = username;
+        prepareLog();
     }
+    
+    private void prepareLog(){
+        final int role = getUserRole(username);
+        
+        if(role == 5){
+            clearBtn.setVisible(true);
+            debugBtn.setVisible(true);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,7 +160,10 @@ public class MgmtLogs extends javax.swing.JPanel {
             sqlite.DEBUG_MODE = 1;
     }//GEN-LAST:event_debugBtnActionPerformed
 
-
+    public int getUserRole(String username){
+        return sqlite.getRole(username);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton clearBtn;
     private javax.swing.JButton debugBtn;
