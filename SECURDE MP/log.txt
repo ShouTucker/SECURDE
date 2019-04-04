@@ -386,3 +386,44 @@ User: admin has logged in 2019-04-03T11:50:27.133
 User: admin accessing adminHomePnl 2019-04-03T11:50:27.193
 User: admin has set the role of User: client1 to 1 2019-04-03T11:51:57.871
 User: admin has set the lock of User: client1 to 1 2019-04-03T11:52:01.779
+User: user1234 attempted to logged in 2019-04-04T22:56:19.688
+User: admin1234 attempted to logged in 2019-04-04T23:10:10.293
+User: potato with Role: 2 added to database 2019-04-04T23:10:29.150
+User: potato has logged in 2019-04-04T23:10:34.254
+User: potato accessing clientHomePnl 2019-04-04T23:10:34.369
+User: potato is reading through their purchase history 2019-04-04T23:10:57.907
+User: potato has logged out 2019-04-04T23:19:28.456
+User: admin has logged in 2019-04-04T23:27:56.049
+User: admin accessing adminHomePnl 2019-04-04T23:27:56.147
+ERROR User: admin was not deleted. 2019-04-04T23:28:42.703
+User: potato has logged in 2019-04-04T23:30:25.691
+User: potato accessing clientHomePnl 2019-04-04T23:30:25.780
+User: potato has logged out 2019-04-04T23:30:29.471
+User: admin has logged in 2019-04-04T23:30:35.643
+User: admin accessing adminHomePnl 2019-04-04T23:30:35.775
+ERROR User: admin was not deleted. 2019-04-04T23:31:27.424
+ERROR User: admin was not deleted. 2019-04-04T23:31:37.979
+User: admin has logged in 2019-04-04T23:32:32.337
+User: admin accessing adminHomePnl 2019-04-04T23:32:32.424
+ERROR User: admin was not deleted. 2019-04-04T23:32:39.758
+User: admin has logged in 2019-04-04T23:34:13.096
+User: admin accessing adminHomePnl 2019-04-04T23:34:13.188
+ERROR User: potato was not deleted. 2019-04-04T23:34:16.869
+ERROR User: emir was not deleted. 2019-04-04T23:34:32.843
+User: admin has logged out 2019-04-04T23:37:54.640
+User: client1 has logged in 2019-04-04T23:38:10.487
+ERROR User: potato was not deleted. 2019-04-04T23:38:16.878
+User: admin has set the lock of User: potato to 1 2019-04-04T23:38:31.539
+User: admin has set the lock of User: potato to 0 2019-04-04T23:38:36.966
+User: client1 has logged out 2019-04-04T23:38:59.831
+User: staff has logged in 2019-04-04T23:39:09.328
+User: staff accessing staffHomePnl 2019-04-04T23:39:09.416
+User: staff is reading through their's and client's history 2019-04-04T23:39:48.879
+User: staff is reading through their's and client's history 2019-04-04T23:40:00.073
+User: staff has logged out 2019-04-04T23:40:08.455
+User: admin has logged in 2019-04-04T23:57:09.063
+User: admin accessing adminHomePnl 2019-04-04T23:57:09.153
+User: potato has been deleted. 2019-04-04T23:57:14.677
+User: admin has set the role of User: test to 2 2019-04-05T00:11:44.911
+User: admin has logged in 2019-04-05T00:18:49.363
+User: admin accessing adminHomePnl 2019-04-05T00:18:49.457

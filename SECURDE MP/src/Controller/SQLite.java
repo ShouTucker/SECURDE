@@ -227,7 +227,7 @@ public class SQLite {
     }
     
     public void removeUser(String username) {
-        String sql = "DELETE FROM users WHERE username='" + username + "');";
+        String sql = "DELETE FROM users WHERE username='" + username + "';";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
