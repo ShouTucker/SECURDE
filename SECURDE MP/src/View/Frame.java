@@ -286,10 +286,10 @@ public class Frame extends javax.swing.JFrame {
         final int role = getUserRole(username);
         //System.out.println(username + " with role " + role);
                       
-        adminHomePnl.init(main.sqlite, username);
-        clientHomePnl.init(main.sqlite, username);
-        managerHomePnl.init(main.sqlite, username);
-        staffHomePnl.init(main.sqlite, username);    
+        adminHomePnl.init(main.sqlite, username, main.logWrite);
+        clientHomePnl.init(main.sqlite, username, main.logWrite);
+        managerHomePnl.init(main.sqlite, username, main.logWrite);
+        staffHomePnl.init(main.sqlite, username, main.logWrite);    
         
         Content.add(adminHomePnl, "adminHomePnl");
         Content.add(managerHomePnl, "managerHomePnl");
@@ -331,6 +331,10 @@ public class Frame extends javax.swing.JFrame {
         managerBtn.setVisible(false);
         staffBtn.setVisible(false);
         clientBtn.setVisible(false);
+        adminHomePnl.setVisible(false);
+        clientHomePnl.setVisible(false);
+        managerHomePnl.setVisible(false);
+        staffHomePnl.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

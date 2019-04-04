@@ -481,4 +481,105 @@ public class SQLite {
         } catch (Exception ex) {}
         return product;
     }
+    
+    public void editRole(String editor, String username, int role){
+        String sql  = "UPDATE users SET role = '" +role+ "' WHERE username = '" +username+ "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("User: " + editor + " has set the role of User: " + username + " to " +role);
+            System.out.println("User: " + editor + " has set the role of User: " + username + " to " +role);
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + editor + " tried to set the role of User: " + username + " to " +role);
+            System.err.println("User: " + editor + " tried to set the role of User: " + username + " to " +role);
+        }
+    }
+    
+    public void editPassword(String editor, String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException{
+        String hashedPass = generateStrongPasswordHash(password);
+        String[] parts = hashedPass.split(":");
+        byte[] salt = fromHex(parts[1]);
+        
+        String sql  = "UPDATE users SET password = '" +hashedPass+ "', salt ='"+salt+"' WHERE username = '" +username+ "';";
+        //System.out.println(sql);
+        
+         try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("User: " + editor + " has changed the password of User: " + username);
+            System.out.println("User: " + editor + " has changed the password of User: " + username);
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + editor + " tried to change the password of User: " + username);
+            System.err.println("User: " + editor + " tried to change the password of User: " + username);
+        }
+    }
+    
+    public void toggleLock(String editor, String username, int value){
+        int state = 1;
+        if(value == 1){
+            state = 0;
+        }
+        
+        String sql = "UPDATE users SET locked = '" +state+ "' WHERE username = '" +username+ "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("User: " + editor + " has set the lock of User: " + username + " to " +state);
+            System.out.println("User: " + editor + " has set the lock of User: " + username + " to " +state);
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
+            System.err.println("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
+        }
+    }
+    
+    public ArrayList<History> getClientHistory(String username){
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "';";
+        ArrayList<History> histories = new ArrayList<History>();
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                histories.add(new History(rs.getInt("id"),
+                                   rs.getString("username"),
+                                   rs.getString("name"),
+                                   rs.getInt("stock"),
+                                   rs.getString("timestamp")));
+            }
+            logWrite.writeToLog("User: " + username + " is reading through their purchase history");
+            System.out.println("User: " + username + " is reading through their purchase history");
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + username + " tried to read their purchase history");
+            System.err.println("User: " + username + " tried to read their purchase history");
+        }
+        return histories;
+    }
+    
+    public ArrayList<History> getStaffHistory(String username){
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role='2');";
+        //select * from history where username = 'staff' or username in (select username from users where role='2');
+        ArrayList<History> histories = new ArrayList<History>();
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                histories.add(new History(rs.getInt("id"),
+                                   rs.getString("username"),
+                                   rs.getString("name"),
+                                   rs.getInt("stock"),
+                                   rs.getString("timestamp")));
+            }
+            logWrite.writeToLog("User: " + username + " is reading through their's and client's history");
+            System.out.println("User: " + username + " is reading through their's and client's history");
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + username + " tried to read their's and client's history");
+            System.err.println("User: " + username + " tried to read their's and client's history");
+        }
+        return histories;
+    }
 }

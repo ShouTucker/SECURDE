@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.LogWrite;
 import Controller.SQLite;
 import Model.Logs;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class MgmtLogs extends javax.swing.JPanel {
     public DefaultTableModel tableModel;
     
     private String username;
+    private LogWrite logWrite;
     
     public MgmtLogs(SQLite sqlite) {
         initComponents();
@@ -32,7 +34,7 @@ public class MgmtLogs extends javax.swing.JPanel {
         debugBtn.setVisible(false);
     }
 
-    public void init(String username){
+    public void init(String username, LogWrite logWrite){
         //      CLEAR TABLE
         for(int nCtr = tableModel.getRowCount(); nCtr > 0; nCtr--){
             tableModel.removeRow(0);
@@ -49,6 +51,7 @@ public class MgmtLogs extends javax.swing.JPanel {
         }
         
         this.username = username;
+        this.logWrite = logWrite;
         prepareLog();
     }
     

@@ -5,6 +5,7 @@
  */
 package View;
 //[255,102,51]
+import Controller.LogWrite;
 import Controller.SQLite;
 import Model.History;
 import Model.Logs;
@@ -30,13 +31,15 @@ public class ClientHome extends javax.swing.JPanel {
     private String username;
     private SQLite sqlite; 
     
+    private LogWrite logWrite;
+    
     private CardLayout contentView = new CardLayout();
     
     public ClientHome() {
         initComponents();
     }
     
-    public void init(SQLite sqlite, String username){
+    public void init(SQLite sqlite, String username, LogWrite logWrite){
         this.sqlite = sqlite;
         
         mgmtHistory = new MgmtHistory(sqlite);
@@ -58,6 +61,7 @@ public class ClientHome extends javax.swing.JPanel {
         logsBtn.setVisible(false);
         
         this.username = username;
+        this.logWrite = logWrite;
         prepareClientPanel();
     }
     
@@ -73,6 +77,7 @@ public class ClientHome extends javax.swing.JPanel {
             usersBtn.setName("USER");
             usersBtn.setVisible(true);
             productsBtn.setVisible(true);
+            historyBtn.setVisible(true);
         }
     }
     /**
@@ -175,7 +180,7 @@ public class ClientHome extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void usersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usersBtnActionPerformed
-        mgmtUser.init(username);
+        mgmtUser.init(username, logWrite);
         usersBtn.setForeground(Color.red);
         productsBtn.setForeground(Color.black);
         historyBtn.setForeground(Color.black);
@@ -184,7 +189,7 @@ public class ClientHome extends javax.swing.JPanel {
     }//GEN-LAST:event_usersBtnActionPerformed
 
     private void productsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productsBtnActionPerformed
-        mgmtProduct.init(username);
+        mgmtProduct.init(username, logWrite);
         usersBtn.setForeground(Color.black);
         productsBtn.setForeground(Color.red);
         historyBtn.setForeground(Color.black);
@@ -193,7 +198,7 @@ public class ClientHome extends javax.swing.JPanel {
     }//GEN-LAST:event_productsBtnActionPerformed
 
     private void historyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyBtnActionPerformed
-        mgmtHistory.init(username);
+        mgmtHistory.init(username, logWrite);
         usersBtn.setForeground(Color.black);
         productsBtn.setForeground(Color.black);
         historyBtn.setForeground(Color.red);
@@ -202,7 +207,7 @@ public class ClientHome extends javax.swing.JPanel {
     }//GEN-LAST:event_historyBtnActionPerformed
 
     private void logsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logsBtnActionPerformed
-        mgmtLogs.init(username);
+        mgmtLogs.init(username, logWrite);
         usersBtn.setForeground(Color.black);
         productsBtn.setForeground(Color.black);
         historyBtn.setForeground(Color.black);

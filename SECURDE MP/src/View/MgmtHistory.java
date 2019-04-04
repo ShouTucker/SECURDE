@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.LogWrite;
 import Controller.SQLite;
 import Model.History;
 import Model.Product;
@@ -23,6 +24,7 @@ public class MgmtHistory extends javax.swing.JPanel {
     public DefaultTableModel tableModel;
     
     private String username;
+    private LogWrite logWrite;
     
     public MgmtHistory(SQLite sqlite) {
         initComponents();
@@ -41,14 +43,22 @@ public class MgmtHistory extends javax.swing.JPanel {
         reloadBtn.setVisible(false);
     }
 
-    public void init(String username){
+    public void init(String username, LogWrite logWrite){
+        final int role = getUserRole(username);
 //      CLEAR TABLE
         for(int nCtr = tableModel.getRowCount(); nCtr > 0; nCtr--){
             tableModel.removeRow(0);
         }
-        
+        ArrayList<History> history = null;
+                
 //      LOAD CONTENTS
-        ArrayList<History> history = sqlite.getHistory();
+        if(role == 5 || role == 4)
+            history = sqlite.getHistory();
+        else if(role == 3)
+            history = sqlite.getStaffHistory(username);
+        else if(role == 2)
+            history = sqlite.getClientHistory(username);
+        
         for(int nCtr = 0; nCtr < history.size(); nCtr++){
             Product product = sqlite.getProduct(history.get(nCtr).getName());
             tableModel.addRow(new Object[]{
@@ -62,13 +72,14 @@ public class MgmtHistory extends javax.swing.JPanel {
         }
         
         this.username = username;
+        this.logWrite = logWrite;
         prepareHistory();
     }
     
     private void prepareHistory(){
         final int role = getUserRole(username);
         
-        if(role == 5 || role == 4){
+        if(role == 5 || role == 4 || role == 3 || role == 2){
             searchBtn.setVisible(true);
             reloadBtn.setVisible(true);
         }
@@ -211,7 +222,7 @@ public class MgmtHistory extends javax.swing.JPanel {
     }//GEN-LAST:event_searchBtnActionPerformed
 
     private void reloadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reloadBtnActionPerformed
-        init(username);
+        init(username, logWrite);
     }//GEN-LAST:event_reloadBtnActionPerformed
 
     public int getUserRole(String username){
