@@ -199,14 +199,21 @@ public class MgmtProduct extends javax.swing.JPanel {
             JTextField stockFld = new JTextField("0");
             designer(stockFld, "PRODUCT STOCK");
 
+            String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
             Object[] message = {
-                "How many " + tableModel.getValueAt(table.getSelectedRow(), 0) + " do you want to purchase?", stockFld
+                "How many " + product + " do you want to purchase?", stockFld
             };
 
             int result = JOptionPane.showConfirmDialog(null, message, "PURCHASE PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
             if (result == JOptionPane.OK_OPTION) {
                 System.out.println(stockFld.getText());
+                String productStock = tableModel.getValueAt(table.getSelectedRow(), 1).toString();
+                int stockNum = Integer.parseInt(productStock);
+                
+                tableModel.setValueAt(stockNum - Integer.parseInt(stockFld.getText()), table.getSelectedRow(), 1);
+                
+                sqlite.buyProduct(product, stockNum, Integer.parseInt(stockFld.getText()));
             }
         }
     }//GEN-LAST:event_purchaseBtnActionPerformed

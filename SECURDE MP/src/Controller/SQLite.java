@@ -161,7 +161,21 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
-        } catch (Exception ex) {}
+        } catch (Exception ex) {
+        
+        }
+    }
+    
+    public void buyProduct(String product, int stock, int amountPurchased){
+        String sql = "UPDATE product SET stock = '" +stock+ "' WHERE name = '" +product+ "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " Amount: " + amountPurchased + " was purchased. Remaining stock: " + (stock-amountPurchased));
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " could not be purchased");
+        }
     }
     
     public ArrayList<User> getUsers(){
@@ -346,7 +360,7 @@ public class SQLite {
         return 1;
     }
     
-    //METHODS FOR ENCRYPTING
+    //METHODS FOR HASHING
     private static String generateStrongPasswordHash(String password) throws NoSuchAlgorithmException, InvalidKeySpecException
     {
         int iterations = 1000;

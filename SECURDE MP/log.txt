@@ -427,3 +427,21 @@ User: potato has been deleted. 2019-04-04T23:57:14.677
 User: admin has set the role of User: test to 2 2019-04-05T00:11:44.911
 User: admin has logged in 2019-04-05T00:18:49.363
 User: admin accessing adminHomePnl 2019-04-05T00:18:49.457
+User: admin has logged in 2019-04-05T16:42:07.456
+User: admin accessing adminHomePnl 2019-04-05T16:42:07.690
+User: admin has logged in 2019-04-05T17:55:17.594
+User: admin accessing adminHomePnl 2019-04-05T17:55:18.157
+User: admin has logged in 2019-04-05T17:55:47.247
+User: admin accessing adminHomePnl 2019-04-05T17:55:47.376
+User: admin has logged in 2019-04-05T17:57:04.635
+User: admin accessing adminHomePnl 2019-04-05T17:57:05.004
+User: admin has logged in 2019-04-05T17:58:20.539
+User: admin accessing adminHomePnl 2019-04-05T17:58:20.919
+User: admin has logged out 2019-04-05T17:58:32.821
+User: admin has logged in 2019-04-05T17:58:39.663
+User: admin has logged in 2019-04-05T20:42:49.183
+User: admin accessing adminHomePnl 2019-04-05T20:42:49.935
+Product: Potatoes Amount: 3 was purchased. Remaining stock: 96 2019-04-05T20:42:59.763
+Product: Potatoes Amount: 5 was purchased. Remaining stock: 91 2019-04-05T20:43:20.380
+User: admin has logged out 2019-04-05T20:43:24.077
+User: admin has logged in 2019-04-05T20:43:30.348
