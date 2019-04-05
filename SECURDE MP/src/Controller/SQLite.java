@@ -161,8 +161,33 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
+            logWrite.writeToLog("Product: " + name + " has been added.");
         } catch (Exception ex) {
+            logWrite.writeToLog("ERROR: Product: " + name + " was not added.");
+        }
+    }
+    
+    public void removeProduct(String product){
+        String sql = "DELETE FROM product WHERE name='" + product + "';";
+
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " has been deleted.");
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " was not deleted.");
+        }
+    }
+    
+    public void editProduct(String product, String newProduct, int stock, float price){
+        String sql = "UPDATE product SET name = '" +newProduct+ "', stock = '" + stock + "', price = '" + price + "' WHERE name = '" +product+ "';";
         
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " Edited to: Product: " + newProduct + " Stock: " + stock + " Price: " + price);
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " could not be edited");
         }
     }
     

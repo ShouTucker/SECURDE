@@ -445,3 +445,20 @@ Product: Potatoes Amount: 3 was purchased. Remaining stock: 96 2019-04-05T20:42:
 Product: Potatoes Amount: 5 was purchased. Remaining stock: 91 2019-04-05T20:43:20.380
 User: admin has logged out 2019-04-05T20:43:24.077
 User: admin has logged in 2019-04-05T20:43:30.348
+User: admin has logged in 2019-04-05T20:47:43.938
+User: admin accessing adminHomePnl 2019-04-05T20:47:44.083
+User: admin has logged in 2019-04-05T20:50:28.778
+User: admin accessing adminHomePnl 2019-04-05T20:50:28.922
+User: admin has logged in 2019-04-05T21:01:37.276
+User: admin accessing adminHomePnl 2019-04-05T21:01:37.704
+Product: Potatoes has been deleted. 2019-04-05T21:01:44.801
+Product: Potatoes has been added. 2019-04-05T21:01:58.582
+User: admin has logged in 2019-04-05T21:14:00.207
+User: admin accessing adminHomePnl 2019-04-05T21:14:00.536
+ERROR Product: Potatoes could not be edited 2019-04-05T21:14:15.362
+User: admin has logged in 2019-04-05T21:16:29.626
+User: admin accessing adminHomePnl 2019-04-05T21:16:29.764
+Product: Potatoes Edited to: Product: Tomatoes Stock: 50 Price: 3.0 2019-04-05T21:16:43.521
+Product: Tomatoes Amount: 10 was purchased. Remaining stock: 40 2019-04-05T21:16:55.643
+Product: Tomatoes has been deleted. 2019-04-05T21:16:59.308
+Product: Potatoes has been added. 2019-04-05T21:17:10.480

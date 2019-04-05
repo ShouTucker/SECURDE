@@ -239,6 +239,7 @@ public class MgmtProduct extends javax.swing.JPanel {
             System.out.println(priceFld.getText());
             
             sqlite.addProduct(nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+            init(username, logWrite);
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -262,7 +263,10 @@ public class MgmtProduct extends javax.swing.JPanel {
                 System.out.println(nameFld.getText());
                 System.out.println(stockFld.getText());
                 System.out.println(priceFld.getText());
+                String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
                 
+                sqlite.editProduct(product, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+                init(username, logWrite);
             }
         }
     }//GEN-LAST:event_editBtnActionPerformed
@@ -273,6 +277,8 @@ public class MgmtProduct extends javax.swing.JPanel {
             
             if (result == JOptionPane.YES_OPTION) {
                 System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                sqlite.removeProduct(tableModel.getValueAt(table.getSelectedRow(), 0).toString());
+                init(username, logWrite);
             }
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
