@@ -13,6 +13,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -56,11 +57,11 @@ public class MgmtUser extends javax.swing.JPanel {
         ArrayList<User> users;
         if(getUserRole(username) == 5)
             users = sqlite.getUsers();
-        else if(getUserRole(username) == 4)
-        {
-            users = sqlite.getStaff();
-            users.add(sqlite.getUser(username));
-        }
+//        else if(getUserRole(username) == 4)
+//        {
+//            users = sqlite.getStaff();
+//            users.add(sqlite.getUser(username));
+//        }
         else{
             users = new ArrayList<>();
             users.add(sqlite.getUser(username));
@@ -80,14 +81,11 @@ public class MgmtUser extends javax.swing.JPanel {
 
     private void prepareUser(){
         final int role = getUserRole(username);
-                
-        if(role == 4 || role == 5){
-            editRoleBtn.setVisible(true);
-        }
         
         if(role == 5){
             deleteBtn.setVisible(true);
             lockBtn.setVisible(true);
+            editRoleBtn.setVisible(true);
         }
         
         else if(role == 2 || role == 3 || role == 4){
@@ -230,9 +228,10 @@ public class MgmtUser extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void editRoleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRoleBtnActionPerformed
-        if(((String)tableModel.getValueAt(table.getSelectedRow(), 0)).equals(username))
-            JOptionPane.showMessageDialog(null, "ERROR: You cannot edit your own role", "ERROR",JOptionPane.ERROR_MESSAGE);
-        else if(table.getSelectedRow() >= 0){
+//        if(((String)tableModel.getValueAt(table.getSelectedRow(), 0)).equals(username))
+//            JOptionPane.showMessageDialog(null, "ERROR: You cannot edit your own role", "ERROR",JOptionPane.ERROR_MESSAGE);
+        //else 
+        if(table.getSelectedRow() >= 0){
             String[] options = {"1-DISABLED","2-CLIENT","3-STAFF","4-MANAGER","5-ADMIN"};
             JComboBox optionList = new JComboBox(options);
             
@@ -255,8 +254,8 @@ public class MgmtUser extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete " + tableModel.getValueAt(table.getSelectedRow(), 0) + "?", "DELETE USER", JOptionPane.YES_NO_OPTION);
             
             if (result == JOptionPane.YES_OPTION) {
-                //System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
-                sqlite.removeUser(username);
+                System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                sqlite.removeUser(tableModel.getValueAt(table.getSelectedRow(), 0).toString());
                 init(username, logWrite);
             }
         }
@@ -280,38 +279,65 @@ public class MgmtUser extends javax.swing.JPanel {
     }//GEN-LAST:event_lockBtnActionPerformed
 
     private void chgpassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chgpassBtnActionPerformed
-        if(getUserRole(username) != 5 && !((String)tableModel.getValueAt(table.getSelectedRow(), 0)).equals(username))
-            JOptionPane.showMessageDialog(null, "ERROR: You can only edit your own password", "ERROR",JOptionPane.ERROR_MESSAGE);
-        else if(table.getSelectedRow() >= 0){
-            JTextField password = new JPasswordField();
-            JTextField confpass = new JPasswordField();
-            designer(password, "PASSWORD");
-            designer(confpass, "CONFIRM PASSWORD");
-            
-            Object[] message = {
-                "Enter New Password:", password, confpass
-            };
+//        if(getUserRole(username) != 5 && !((String)tableModel.getValueAt(table.getSelectedRow(), 0)).equals(username))
+//            JOptionPane.showMessageDialog(null, "ERROR: You can only edit your own password", "ERROR",JOptionPane.ERROR_MESSAGE);
+//        else 
+            if(table.getSelectedRow() >= 0){
+                JTextField oldPassword = new JPasswordField();
+                JTextField newPassword = new JPasswordField();
+                JTextField confpass = new JPasswordField();
+                String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$";
+                designer(oldPassword, "OLD PASSWORD");
+                designer(newPassword, "NEW PASSWORD");
+                designer(confpass, "CONFIRM PASSWORD");
 
-            int result = JOptionPane.showConfirmDialog(null, message, "CHANGE PASSWORD", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
-            
-            if (result == JOptionPane.OK_OPTION) {
-//                System.out.println(password.getText());
-//                System.out.println(confpass.getText());
-                if(password.getText().equals(confpass.getText())){
+                Object[] messageAdmin = {
+                        "Enter New Password:", newPassword, confpass
+                };
+                
+                Object[] message = {
+                        "Enter New Password:", oldPassword, newPassword, confpass
+                };
+
+                int result;
+
+                if(getUserRole(username) != 5)
+                    result = JOptionPane.showConfirmDialog(null, message, "CHANGE PASSWORD", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
+                else
+                    result = JOptionPane.showConfirmDialog(null, messageAdmin, "CHANGE PASSWORD", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
+                
+                if (result == JOptionPane.OK_OPTION) {
                     try {
-                        sqlite.editPassword(username, (String)tableModel.getValueAt(table.getSelectedRow(), 0), password.getText());
-                        init(username, logWrite);
+                        //                System.out.println(password.getText());
+                        //                System.out.println(confpass.getText());
+                        if(getUserRole(username) == 5 || (getUserRole(username) != 5 && sqlite.loginCheck(username, oldPassword.getText()))){
+                            if(newPassword.getText().equals(confpass.getText())){
+                                if(Pattern.matches(passwordRegex, newPassword.getText())){
+                                    try {
+                                        sqlite.editPassword(username, (String)tableModel.getValueAt(table.getSelectedRow(), 0), newPassword.getText());
+                                        init(username, logWrite);
+                                    } catch (NoSuchAlgorithmException ex) {
+                                        Logger.getLogger(MgmtUser.class.getName()).log(Level.SEVERE, null, ex);
+                                    } catch (InvalidKeySpecException ex) {
+                                        Logger.getLogger(MgmtUser.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                }
+                                else
+                                    JOptionPane.showMessageDialog(null, "ERROR: Password must be 8 characters long, have at least 1 lowercase and uppercase letter, a number and a special character", "ERROR",JOptionPane.ERROR_MESSAGE);
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(null, "ERROR: New Password and confirmation do not match", "ERROR",JOptionPane.ERROR_MESSAGE);
+                            }
+                        }
+                        else
+                            JOptionPane.showMessageDialog(null, "ERROR: Old password does not match", "ERROR",JOptionPane.ERROR_MESSAGE);
                     } catch (NoSuchAlgorithmException ex) {
                         Logger.getLogger(MgmtUser.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (InvalidKeySpecException ex) {
                         Logger.getLogger(MgmtUser.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-                else{
-                    JOptionPane.showMessageDialog(null, "ERROR: Passwords do not match", "ERROR",JOptionPane.ERROR_MESSAGE);
-                }
             }
-        }
     }//GEN-LAST:event_chgpassBtnActionPerformed
 
     public int getUserRole(String username){

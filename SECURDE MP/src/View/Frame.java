@@ -182,19 +182,23 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBtnActionPerformed
-        checkAccess("adminHomePnl", 5);
+        if(!currentPanel.equals("adminHomePnl"))
+            checkAccess("adminHomePnl", 5);
     }//GEN-LAST:event_adminBtnActionPerformed
 
     private void managerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managerBtnActionPerformed
-        checkAccess("managerHomePnl", 4);
+        if(!currentPanel.equals("managerHomePnl"))
+            checkAccess("managerHomePnl", 4);
     }//GEN-LAST:event_managerBtnActionPerformed
 
     private void staffBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_staffBtnActionPerformed
-        checkAccess("staffHomePnl", 3);
+        if(!currentPanel.equals("staffHomePnl"))   
+            checkAccess("staffHomePnl", 3);
     }//GEN-LAST:event_staffBtnActionPerformed
 
     private void clientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientBtnActionPerformed
-        checkAccess("clientHomePnl", 2);
+        if(!currentPanel.equals("clientHomePnl"))  
+            checkAccess("clientHomePnl", 2);
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -270,12 +274,16 @@ public class Frame extends javax.swing.JFrame {
         return main.sqlite.getRole(username);
     }
     
+    public boolean checkLocked(String username){
+        return main.sqlite.checkIfUserLocked(username);
+    }
+    
     private void viewContent(String content){
-        if(!currentPanel.equals(content)){
+        //if(!currentPanel.equals(content)){
             writeToLog("User: " + username + " accessing " + content);
             currentPanel = content;
             contentView.show(Content, content);
-        }
+        //}
     }
     
     public void writeToLog(String log){

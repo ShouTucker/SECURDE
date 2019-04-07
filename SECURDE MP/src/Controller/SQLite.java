@@ -13,6 +13,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -155,13 +156,54 @@ public class SQLite {
         } catch (Exception ex) {}
     }
     
-    public void addProduct(String name, int stock, double price) {
+    public void addProduct(String username, String name, int stock, double price) {
         String sql = "INSERT INTO product(name,stock,price) VALUES('" + name + "','" + stock + "','" + price + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
-        } catch (Exception ex) {}
+            logWrite.writeToLog("Product: " + name + " has been added.");
+            addHistory(username, name, stock, getTime());
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR: Product: " + name + " was not added.");
+        }
+    }
+    
+    public void removeProduct(String product){
+        String sql = "DELETE FROM product WHERE name='" + product + "';";
+
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " has been deleted.");
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " was not deleted.");
+        }
+    }
+    
+    public void editProduct(String product, String newProduct, int stock, float price){
+        String sql = "UPDATE product SET name = '" +newProduct+ "', stock = '" + stock + "', price = '" + price + "' WHERE name = '" +product+ "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " Edited to: Product: " + newProduct + " Stock: " + stock + " Price: " + price);
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " could not be edited");
+        }
+    }
+    
+    public void buyProduct(String username, String product, int stock, int amountPurchased){
+        String sql = "UPDATE product SET stock = '" +(stock-amountPurchased)+ "' WHERE name = '" +product+ "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            logWrite.writeToLog("Product: " + product + " Amount: " + amountPurchased + " was purchased. Remaining stock: " + (stock-amountPurchased));
+            addHistory(username, product, (stock-amountPurchased), getTime());
+        } catch (Exception ex) {
+            logWrite.writeToLog("ERROR Product: " + product + " could not be purchased");
+        }
     }
     
     public ArrayList<User> getUsers(){
@@ -227,7 +269,7 @@ public class SQLite {
     }
     
     public void removeUser(String username) {
-        String sql = "DELETE FROM users WHERE username='" + username + "');";
+        String sql = "DELETE FROM users WHERE username='" + username + "';";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
@@ -346,7 +388,7 @@ public class SQLite {
         return 1;
     }
     
-    //METHODS FOR ENCRYPTING
+    //METHODS FOR HASHING
     private static String generateStrongPasswordHash(String password) throws NoSuchAlgorithmException, InvalidKeySpecException
     {
         int iterations = 1000;
@@ -559,7 +601,7 @@ public class SQLite {
     }
     
     public ArrayList<History> getStaffHistory(String username){
-        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role='2');";
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role='3');";
         //select * from history where username = 'staff' or username in (select username from users where role='2');
         ArrayList<History> histories = new ArrayList<History>();
         
@@ -574,12 +616,63 @@ public class SQLite {
                                    rs.getInt("stock"),
                                    rs.getString("timestamp")));
             }
-            logWrite.writeToLog("User: " + username + " is reading through their's and client's history");
-            System.out.println("User: " + username + " is reading through their's and client's history");
+            logWrite.writeToLog("User: " + username + " is reading through their's and other staff's history");
+            System.out.println("User: " + username + " is reading through their's and other staff's history");
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + username + " tried to read their's and client's history");
-            System.err.println("User: " + username + " tried to read their's and client's history");
+            logWrite.writeToLog("User: " + username + " tried to read their's and other staff's history");
+            System.err.println("User: " + username + " tried to read their's and other staff's history");
         }
         return histories;
+    }
+    
+    public ArrayList<History> getManagerHistory(String username){
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role<='3');";
+        //select * from history where username = 'staff' or username in (select username from users where role='2');
+        ArrayList<History> histories = new ArrayList<History>();
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                histories.add(new History(rs.getInt("id"),
+                                   rs.getString("username"),
+                                   rs.getString("name"),
+                                   rs.getInt("stock"),
+                                   rs.getString("timestamp")));
+            }
+            logWrite.writeToLog("User: " + username + " is reading through manager, staff and client's history");
+            System.out.println("User: " + username + " is reading through manager, staff and client's history");
+        } catch (Exception ex) {
+            logWrite.writeToLog("User: " + username + " tried to read manager, staff and client's history");
+            System.err.println("User: " + username + " tried to read tmanager, staff and client's history");
+        }
+        return histories;
+    }
+    
+    public boolean checkIfUserLocked(String username){
+       String sql = "SELECT locked FROM users WHERE username='" + username + "';";
+       int locked = 0;
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            if(rs.next()){
+                //System.out.println(" with Role " + rs.getInt("role"));
+                locked = rs.getInt("locked");
+            }
+        } catch (Exception ex) {}
+        
+        if(locked != 0)
+            return true;
+        
+        return false;
+    }
+    
+    private String getTime(){
+        String time = ""+LocalDateTime.now();
+        String replace = time.replace("T", " ");
+        
+        return replace;
     }
 }

@@ -112,20 +112,29 @@ public class Login extends javax.swing.JPanel {
         }else if(!frame.checkAttempts(username.getText())){
             clearUsernamePassword();
             errorField.setText("Too Much Attempts!");
-        }else try {
-            if(frame.checkValidLogin(username.getText(), String.valueOf(password.getPassword()))){
-                frame.mainNav(username.getText());
-                clearFields();
+        }else {
+            try {
+                if(frame.checkValidLogin(username.getText(), String.valueOf(password.getPassword()))){
+                    if(frame.getUserRole(username.getText()) != 1 && !frame.checkLocked(username.getText())){
+                        frame.mainNav(username.getText());
+                        clearFields();
+                    }
+                    else{
+                        errorField.setText("Account locked/disabled. Talk to your admin/manager for more information");
+                    }
+                }
+                else{
+                    errorField.setText("The Username or Password is Incorrect, Please Try Again!");
+                    clearUsernamePassword();
+                }
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InvalidKeySpecException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
-            else{
-                errorField.setText("The Username or Password is Incorrect, Please Try Again!");
-                clearUsernamePassword();
-            }
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InvalidKeySpecException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+//        if(frame.getUserRole(username.getText()) == 1 || frame.checkLocked(username.getText()))
+//            errorField.setText("Account locked/disabled. Talk to your admin/manager for more information");
     }                                         
 
     private void clearFields(){
