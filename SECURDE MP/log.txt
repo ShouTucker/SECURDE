@@ -574,3 +574,587 @@ User: staff has logged in 2019-04-07T17:18:38.441
 User: staff accessing staffHomePnl 2019-04-07T17:18:38.510
 User: staff is reading through their's and client's history 2019-04-07T17:18:46.784
 User: staff is reading through their's and client's history 2019-04-07T17:20:01.859
+User: admin has logged in 2019-04-07T17:37:22.657
+User: admin accessing adminHomePnl 2019-04-07T17:37:22.737
+User: admin has logged out 2019-04-07T17:37:54.852
+User: admin has logged in 2019-04-07T18:05:21.757
+User: admin accessing adminHomePnl 2019-04-07T18:05:21.844
+User: admin has set the role of User: client2 to 1 2019-04-07T18:05:30.230
+User: admin has logged out 2019-04-07T18:05:31.761
+User: admin has logged in 2019-04-07T18:06:35.591
+User: admin has set the role of User: client2 to 2 2019-04-07T18:06:51.982
+User: admin has logged out 2019-04-07T18:06:54.297
+User: client2 has logged in 2019-04-07T18:07:04.302
+User: client2 accessing clientHomePnl 2019-04-07T18:07:04.366
+User: client2 is reading through their purchase history 2019-04-07T18:07:06.824
+User: client2 has logged out 2019-04-07T18:07:10.831
+User: client2 has logged in 2019-04-07T18:07:48.388
+User: client2 accessing clientHomePnl 2019-04-07T18:07:48.466
+User: client2 has logged out 2019-04-07T18:07:49.761
+User: client2 has logged in 2019-04-07T18:08:39.415
+User: client2 has logged out 2019-04-07T18:08:42.905
+User: staff has logged in 2019-04-07T18:08:51.542
+User: staff accessing staffHomePnl 2019-04-07T18:08:51.612
+User: staff has logged out 2019-04-07T18:08:52.878
+User: a attempted to logged in 2019-04-07T18:12:23.909
+User: client1 has logged in 2019-04-07T18:12:38.958
+User: client2 has logged in 2019-04-07T18:12:43.073
+User: client2 accessing clientHomePnl 2019-04-07T18:12:43.153
+User: client2 has logged out 2019-04-07T18:12:44.181
+User: admin has logged in 2019-04-07T18:12:56.200
+User: admin accessing adminHomePnl 2019-04-07T18:12:56.278
+User: admin has set the lock of User: client1 to 0 2019-04-07T18:13:06.035
+User: admin has set the role of User: client1 to 1 2019-04-07T18:13:13.263
+User: admin has logged out 2019-04-07T18:13:14.704
+User: client1 has logged in 2019-04-07T18:13:28.486
+User: admin has logged in 2019-04-07T18:13:35.132
+User: admin has set the lock of User: client1 to 1 2019-04-07T18:13:40.565
+User: admin has logged out 2019-04-07T18:13:43.460
+User: client1 has logged in 2019-04-07T18:13:50.196
+User: admin has logged in 2019-04-07T18:13:56.855
+User: admin has set the role of User: client1 to 2 2019-04-07T18:14:02.713
+User: admin has set the lock of User: client1 to 0 2019-04-07T18:14:05.856
+User: admin has logged out 2019-04-07T18:14:07.770
+User: client1 has logged in 2019-04-07T18:14:14.363
+User: client1 accessing clientHomePnl 2019-04-07T18:14:14.427
+User: client1 is reading through their purchase history 2019-04-07T18:14:19.443
+User: client1 is reading through their purchase history 2019-04-07T18:14:25.913
+User: client1 has logged out 2019-04-07T18:14:33.262
+User: client2 has logged in 2019-04-07T18:14:42.439
+User: client2 has logged out 2019-04-07T18:14:44.894
+User: client2 has logged in 2019-04-07T18:14:52.180
+User: client2 has logged out 2019-04-07T18:15:05.420
+User: client2 has logged in 2019-04-07T18:15:15.736
+User: client2 has logged out 2019-04-07T18:15:17.440
+User: client2 has logged in 2019-04-07T18:16:46.381
+User: client2 has logged out 2019-04-07T18:16:47.730
+User: admin has logged in 2019-04-07T18:24:22.259
+User: admin accessing adminHomePnl 2019-04-07T18:24:22.333
+User: admin has logged out 2019-04-07T18:24:24.066
+User: client2 has logged in 2019-04-07T18:24:30.889
+User: client2 accessing clientHomePnl 2019-04-07T18:24:30.928
+User: client2 has logged out 2019-04-07T18:24:33.642
+User: client1 has logged in 2019-04-07T18:24:40.864
+User: client1 has logged out 2019-04-07T18:24:44.895
+User: admin has logged in 2019-04-07T18:24:54.276
+User: admin accessing adminHomePnl 2019-04-07T18:24:54.312
+User: admin has logged out 2019-04-07T18:25:01.233
+User: client1 has logged in 2019-04-07T18:25:07.905
+User: client1 accessing clientHomePnl 2019-04-07T18:25:07.935
+User: client1 has logged out 2019-04-07T18:25:10.555
+User: client1 attempted to logged in 2019-04-07T18:25:15.262
+User: client1 has logged in 2019-04-07T18:25:22.682
+User: client1 has logged out 2019-04-07T18:25:30.259
+User: client2 has logged in 2019-04-07T18:25:39.322
+User: client2 has logged out 2019-04-07T18:25:51.662
+User: staff has logged in 2019-04-07T18:25:59.442
+User: staff accessing staffHomePnl 2019-04-07T18:25:59.467
+User: staff has logged out 2019-04-07T18:26:00.240
+User: staff has logged in 2019-04-07T18:26:06.469
+User: staff has logged out 2019-04-07T18:26:07.917
+User: admin has logged in 2019-04-07T18:28:43.629
+User: admin accessing adminHomePnl 2019-04-07T18:28:43.667
+User: admin has logged out 2019-04-07T18:28:46.371
+User: staff has logged in 2019-04-07T18:28:56.252
+User: staff accessing staffHomePnl 2019-04-07T18:28:56.295
+User: staff has logged out 2019-04-07T18:28:58.523
+User: client1 has logged in 2019-04-07T18:29:13.242
+User: client1 accessing clientHomePnl 2019-04-07T18:29:13.279
+User: client1 is reading through their purchase history 2019-04-07T18:29:25.423
+User: admin has logged in 2019-04-07T18:31:03.134
+User: admin accessing adminHomePnl 2019-04-07T18:31:03.247
+User: admin has logged out 2019-04-07T18:31:06.360
+User: client1 has logged in 2019-04-07T18:31:12.647
+User: client1 accessing clientHomePnl 2019-04-07T18:31:12.690
+User: client1 has logged out 2019-04-07T18:31:14.652
+User: admin has logged in 2019-04-07T18:31:20.187
+User: admin accessing adminHomePnl 2019-04-07T18:31:20.248
+User: admin has logged out 2019-04-07T18:31:21.496
+User: client1 has logged in 2019-04-07T18:31:28.329
+User: client1 accessing clientHomePnl 2019-04-07T18:31:28.370
+User: client1 has logged out 2019-04-07T18:31:29.892
+User: admin has logged in 2019-04-07T18:31:36.378
+User: admin accessing adminHomePnl 2019-04-07T18:31:36.454
+User: admin has logged out 2019-04-07T18:31:38.034
+User: client1 has logged in 2019-04-07T18:31:45.502
+User: client1 accessing clientHomePnl 2019-04-07T18:31:45.541
+User: client1 is reading through their purchase history 2019-04-07T18:31:47.226
+User: client1 has logged out 2019-04-07T18:31:49.554
+User: client2 has logged in 2019-04-07T18:31:59.839
+User: admin has set the role of User: ernesto to 3 2019-04-07T18:32:24.160
+User: admin has set the role of User: ernesto to 5 2019-04-07T18:32:40.058
+User: client2 has logged out 2019-04-07T18:32:52.837
+User: admin has logged in 2019-04-07T18:38:11.737
+User: admin accessing adminHomePnl 2019-04-07T18:38:11.816
+User: admin has logged out 2019-04-07T18:38:13.810
+User: client1 has logged in 2019-04-07T18:38:22.656
+User: client1 accessing clientHomePnl 2019-04-07T18:38:22.699
+User: client1 has logged out 2019-04-07T18:38:24.575
+User: client2 has logged in 2019-04-07T18:38:32.356
+User: client2 has logged out 2019-04-07T18:38:39.712
+User: client1 has logged in 2019-04-07T18:38:50.340
+User: client1 has logged out 2019-04-07T18:38:51.569
+User: admin has logged in 2019-04-07T18:39:19.096
+User: admin accessing adminHomePnl 2019-04-07T18:39:19.172
+User: admin has logged out 2019-04-07T18:39:22.033
+User: client1 attempted to logged in 2019-04-07T18:39:30.994
+User: client1 has logged in 2019-04-07T18:39:44.031
+User: client1 accessing clientHomePnl 2019-04-07T18:39:44.068
+User: client1 has logged out 2019-04-07T18:39:45.851
+User: client2 has logged in 2019-04-07T18:39:55.907
+User: client2 has logged out 2019-04-07T18:39:57.899
+User: admin has logged in 2019-04-07T18:44:25.389
+User: admin accessing adminHomePnl 2019-04-07T18:44:25.478
+User: admin has logged out 2019-04-07T18:44:27.177
+User: client1 has logged in 2019-04-07T18:44:33.932
+User: client1 accessing clientHomePnl 2019-04-07T18:44:33.970
+User: client1 has logged out 2019-04-07T18:44:35.951
+User: client2 has logged in 2019-04-07T18:44:48.378
+User: client2 has logged out 2019-04-07T18:44:51.054
+User: client1 has logged in 2019-04-07T18:45:01.043
+User: client1 has logged out 2019-04-07T18:45:05.258
+User: staff has logged in 2019-04-07T18:45:13.281
+User: staff accessing staffHomePnl 2019-04-07T18:45:13.315
+User: staff has logged out 2019-04-07T18:45:14.384
+User: admin attempted to logged in 2019-04-07T18:45:19.300
+User: admin has logged in 2019-04-07T18:45:30.358
+User: admin accessing adminHomePnl 2019-04-07T18:45:30.387
+User: admin has logged out 2019-04-07T18:45:32.722
+User: admin has logged in 2019-04-07T18:50:05.753
+User: admin accessing adminHomePnl 2019-04-07T18:50:05.842
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-07T18:50:07.522
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-07T18:50:08.034
+User: admin has logged out 2019-04-07T18:50:10.934
+User: client1 has logged in 2019-04-07T18:50:18.296
+User: client1 accessing clientHomePnl 2019-04-07T18:50:18.334
+User: client1 has logged out 2019-04-07T18:50:19.885
+User: client2 has logged in 2019-04-07T18:50:26.890
+User: admin has logged in 2019-04-07T18:54:31.740
+User: admin accessing adminHomePnl 2019-04-07T18:54:31.823
+User: admin has logged out 2019-04-07T18:54:33.096
+User: client1 attempted to logged in 2019-04-07T18:54:39.520
+User: client1 has logged in 2019-04-07T18:54:50.052
+User: client1 accessing clientHomePnl 2019-04-07T18:54:50.100
+User: client1 has logged out 2019-04-07T18:54:52.040
+User: client2 has logged in 2019-04-07T18:54:59.429
+User: client2 has logged out 2019-04-07T18:55:03.257
+User: admin has logged in 2019-04-07T18:55:47.690
+User: admin accessing adminHomePnl 2019-04-07T18:55:47.772
+User: admin has logged out 2019-04-07T18:55:49.356
+User: client1 has logged in 2019-04-07T18:55:56.559
+User: client1 accessing clientHomePnl 2019-04-07T18:55:56.596
+User: client1 has logged out 2019-04-07T18:55:58.017
+User: client2 has logged in 2019-04-07T18:56:04.287
+User: client2 has logged out 2019-04-07T18:56:05.646
+User: admin has logged in 2019-04-07T19:18:24.695
+User: admin accessing adminHomePnl 2019-04-07T19:18:24.795
+User: admin has logged out 2019-04-07T19:18:27.393
+User: client1 has logged in 2019-04-07T19:18:34.902
+User: client1 accessing clientHomePnl 2019-04-07T19:18:34.949
+User: client1 has logged out 2019-04-07T19:18:37.280
+User: client1 has logged in 2019-04-07T19:18:45.202
+User: client1 has logged out 2019-04-07T19:18:50.188
+User: admin has logged in 2019-04-07T19:20:46.866
+User: admin accessing adminHomePnl 2019-04-07T19:20:46.969
+User: admin has logged out 2019-04-07T19:20:48.574
+User: client1 has logged in 2019-04-07T19:20:54.169
+User: client1 accessing clientHomePnl 2019-04-07T19:20:54.214
+User: client1 has logged out 2019-04-07T19:20:55.791
+User: client1 has logged in 2019-04-07T19:21:02.555
+User: client1 has logged out 2019-04-07T19:21:06.743
+User: admin has logged in 2019-04-07T19:21:17.449
+User: admin accessing adminHomePnl 2019-04-07T19:21:17.500
+User: admin has logged out 2019-04-07T19:21:19.074
+User: client1 has logged in 2019-04-07T19:21:33.949
+User: client1 accessing clientHomePnl 2019-04-07T19:21:33.995
+User: client1 has logged out 2019-04-07T19:21:35.537
+User: client1 has logged in 2019-04-07T19:21:41.785
+User: client1 has logged out 2019-04-07T19:21:42.862
+User: client1 has logged in 2019-04-07T19:21:49.191
+User: client1 has logged out 2019-04-07T19:21:50.027
+User: staff has logged in 2019-04-07T19:21:59.628
+User: staff accessing staffHomePnl 2019-04-07T19:21:59.661
+User: staff has logged out 2019-04-07T19:22:01.982
+User: client1 has logged in 2019-04-07T19:22:08.490
+User: client1 accessing clientHomePnl 2019-04-07T19:22:08.524
+User: client1 is reading through their purchase history 2019-04-07T19:22:11.380
+User: client1 has logged out 2019-04-07T19:22:20.672
+User: client2 attempted to logged in 2019-04-07T19:22:31.852
+User: client2 has logged in 2019-04-07T19:22:40.637
+User: client2 has logged out 2019-04-07T19:22:47.174
+User: client2 has logged in 2019-04-07T19:22:56.081
+User: client2 has logged out 2019-04-07T19:22:56.840
+User: client1 has logged in 2019-04-07T19:23:03.296
+User: client1 has logged out 2019-04-07T19:23:05.002
+User: staff attempted to logged in 2019-04-07T19:23:10.969
+User: staff has logged in 2019-04-07T19:23:19.642
+User: staff accessing staffHomePnl 2019-04-07T19:23:19.672
+User: staff has logged out 2019-04-07T19:23:22.532
+User: client1 has logged in 2019-04-07T19:23:28.596
+User: client1 accessing clientHomePnl 2019-04-07T19:23:28.657
+User: client1 has logged out 2019-04-07T19:23:29.379
+User: client2 has logged in 2019-04-07T19:23:34.818
+User: client2 has logged out 2019-04-07T19:23:35.739
+User: admin attempted to logged in 2019-04-07T19:24:45.837
+User: admin has logged in 2019-04-07T19:24:51.040
+User: admin accessing adminHomePnl 2019-04-07T19:24:51.137
+User: admin has logged out 2019-04-07T19:24:53.857
+User: client1 attempted to logged in 2019-04-07T19:25:01.167
+User: client1 has logged in 2019-04-07T19:25:07.122
+User: client1 accessing clientHomePnl 2019-04-07T19:25:07.167
+User: client1 has logged out 2019-04-07T19:25:09.256
+User: client2 has logged in 2019-04-07T19:25:16.535
+User: client2 has logged out 2019-04-07T19:25:18.269
+User: admin has logged in 2019-04-07T19:27:40.610
+User: admin accessing adminHomePnl 2019-04-07T19:27:40.690
+User: admin has logged out 2019-04-07T19:27:41.908
+User: client1 has logged in 2019-04-07T19:27:47.262
+User: client1 accessing clientHomePnl 2019-04-07T19:27:47.305
+User: client1 has logged out 2019-04-07T19:27:48.310
+User: client2 has logged in 2019-04-07T19:27:55.183
+User: client2 has logged out 2019-04-07T19:27:55.908
+User: admin has logged in 2019-04-07T19:30:24.429
+User: admin accessing adminHomePnl 2019-04-07T19:30:24.512
+User: admin has logged out 2019-04-07T19:30:27.926
+User: client1 has logged in 2019-04-07T19:30:36.934
+User: client1 accessing clientHomePnl 2019-04-07T19:30:36.973
+User: client1 has logged out 2019-04-07T19:30:38.784
+User: client2 has logged in 2019-04-07T19:30:45.149
+User: client2 has logged out 2019-04-07T19:30:46.193
+User: admin has logged in 2019-04-07T19:35:55.108
+User: admin accessing adminHomePnl 2019-04-07T19:35:55.117
+ERROR User: admin with Role: 5 tried to access managerHomePnl 2019-04-07T19:35:55.119
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-07T19:35:55.122
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-07T19:35:55.124
+User: admin has logged out 2019-04-07T19:36:07.099
+User: client1 has logged in 2019-04-07T19:36:16.904
+ERROR User: client1 with Role: 2 tried to access adminHomePnl 2019-04-07T19:36:16.912
+ERROR User: client1 with Role: 2 tried to access managerHomePnl 2019-04-07T19:36:16.914
+ERROR User: client1 with Role: 2 tried to access staffHomePnl 2019-04-07T19:36:16.917
+User: client1 accessing clientHomePnl 2019-04-07T19:36:16.918
+User: client1 has logged out 2019-04-07T19:36:30.904
+User: admin attempted to logged in 2019-04-07T19:36:47.253
+User: admin has logged in 2019-04-07T19:36:52.612
+User: admin accessing adminHomePnl 2019-04-07T19:36:52.619
+ERROR User: admin with Role: 5 tried to access managerHomePnl 2019-04-07T19:36:52.622
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-07T19:36:52.624
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-07T19:36:52.627
+User: admin has logged out 2019-04-07T19:36:54.660
+User: client1 has logged in 2019-04-07T19:36:59.377
+ERROR User: client1 with Role: 2 tried to access adminHomePnl 2019-04-07T19:36:59.384
+ERROR User: client1 with Role: 2 tried to access managerHomePnl 2019-04-07T19:36:59.388
+ERROR User: client1 with Role: 2 tried to access staffHomePnl 2019-04-07T19:36:59.391
+User: client1 accessing clientHomePnl 2019-04-07T19:36:59.392
+User: client1 has logged out 2019-04-07T19:37:00.295
+User: client2 has logged in 2019-04-07T19:37:07.539
+ERROR User: client2 with Role: 2 tried to access adminHomePnl 2019-04-07T19:37:07.547
+ERROR User: client2 with Role: 2 tried to access managerHomePnl 2019-04-07T19:37:07.550
+ERROR User: client2 with Role: 2 tried to access staffHomePnl 2019-04-07T19:37:07.552
+User: client2 has logged out 2019-04-07T19:37:08.572
+User: client1 has logged in 2019-04-07T19:37:13.224
+ERROR User: client1 with Role: 2 tried to access adminHomePnl 2019-04-07T19:37:13.232
+ERROR User: client1 with Role: 2 tried to access managerHomePnl 2019-04-07T19:37:13.234
+ERROR User: client1 with Role: 2 tried to access staffHomePnl 2019-04-07T19:37:13.236
+User: client1 has logged out 2019-04-07T19:37:14.057
+User: staff has logged in 2019-04-07T19:37:19.917
+ERROR User: staff with Role: 3 tried to access adminHomePnl 2019-04-07T19:37:19.923
+ERROR User: staff with Role: 3 tried to access managerHomePnl 2019-04-07T19:37:19.926
+User: staff accessing staffHomePnl 2019-04-07T19:37:19.928
+ERROR User: staff with Role: 3 tried to access clientHomePnl 2019-04-07T19:37:19.930
+User: staff has logged out 2019-04-07T19:37:20.722
+User: manager has logged in 2019-04-07T19:37:26.602
+ERROR User: manager with Role: 4 tried to access adminHomePnl 2019-04-07T19:37:26.609
+User: manager accessing managerHomePnl 2019-04-07T19:37:26.611
+ERROR User: manager with Role: 4 tried to access staffHomePnl 2019-04-07T19:37:26.613
+ERROR User: manager with Role: 4 tried to access clientHomePnl 2019-04-07T19:37:26.616
+User: manager has logged out 2019-04-07T19:37:27.401
+User: client1 has logged in 2019-04-07T19:37:33.065
+ERROR User: client1 with Role: 2 tried to access adminHomePnl 2019-04-07T19:37:33.072
+ERROR User: client1 with Role: 2 tried to access managerHomePnl 2019-04-07T19:37:33.074
+ERROR User: client1 with Role: 2 tried to access staffHomePnl 2019-04-07T19:37:33.076
+User: client1 accessing clientHomePnl 2019-04-07T19:37:33.078
+User: client1 has logged out 2019-04-07T19:37:33.773
+User: admin has logged in 2019-04-07T19:37:38.529
+User: admin accessing adminHomePnl 2019-04-07T19:37:38.536
+ERROR User: admin with Role: 5 tried to access managerHomePnl 2019-04-07T19:37:38.538
+ERROR User: admin with Role: 5 tried to access staffHomePnl 2019-04-07T19:37:38.540
+ERROR User: admin with Role: 5 tried to access clientHomePnl 2019-04-07T19:37:38.542
+User: admin attempted to logged in 2019-04-07T20:54:20.513
+User: admin has logged in 2019-04-07T20:54:32.322
+User: admin accessing adminHomePnl 2019-04-07T20:54:32.411
+User: admin has logged out 2019-04-07T20:54:35.863
+User: client1 has logged in 2019-04-07T20:54:41.833
+User: client1 accessing clientHomePnl 2019-04-07T20:54:41.904
+User: client1 has logged out 2019-04-07T20:54:43.974
+User: client1 has logged in 2019-04-07T20:54:50.337
+User: client1 has logged out 2019-04-07T20:55:13.922
+User: client1 has logged in 2019-04-07T20:55:22.385
+User: client1 has logged out 2019-04-07T20:55:23.208
+User: admin has logged in 2019-04-07T20:55:29.367
+User: admin accessing adminHomePnl 2019-04-07T20:55:29.443
+User: admin has logged out 2019-04-07T20:55:31.180
+User: client1 has logged in 2019-04-07T20:55:38.307
+User: client1 accessing clientHomePnl 2019-04-07T20:55:38.369
+User: client1 is reading through their purchase history 2019-04-07T20:55:39.828
+User: client1 has logged out 2019-04-07T20:55:53.245
+User: admin has logged in 2019-04-07T20:55:58.238
+User: admin accessing adminHomePnl 2019-04-07T20:55:58.298
+User: admin has logged out 2019-04-07T20:56:00.795
+User: client1 has logged in 2019-04-07T20:56:06.180
+User: client1 accessing clientHomePnl 2019-04-07T20:56:06.239
+User: client1 has logged out 2019-04-07T20:56:07.673
+User: client1 has logged in 2019-04-07T20:56:12.393
+User: admin has logged in 2019-04-07T20:57:21.560
+User: admin accessing adminHomePnl 2019-04-07T20:57:21.644
+User: admin has logged out 2019-04-07T20:57:22.840
+User: client1 attempted to logged in 2019-04-07T20:57:28.702
+User: client1 has logged in 2019-04-07T20:57:34.086
+User: client1 accessing clientHomePnl 2019-04-07T20:57:34.163
+User: client1 has logged out 2019-04-07T20:57:36.057
+User: client1 attempted to logged in 2019-04-07T20:57:41.651
+User: client1 has logged in 2019-04-07T20:57:48.254
+User: client1 accessing clientHomePnl 2019-04-07T20:57:48.319
+User: client1 has logged out 2019-04-07T20:57:49.845
+User: admin has logged in 2019-04-07T20:58:00.227
+User: admin accessing adminHomePnl 2019-04-07T20:58:00.316
+User: admin has logged out 2019-04-07T20:58:03.310
+User: client1 has logged in 2019-04-07T20:58:08.957
+User: client1 accessing clientHomePnl 2019-04-07T20:58:09.019
+User: client1 has logged out 2019-04-07T20:58:23.010
+User: client2 has logged in 2019-04-07T20:58:29.383
+User: client2 accessing clientHomePnl 2019-04-07T20:58:29.445
+User: client2 has logged out 2019-04-07T20:58:30.366
+User: admin has logged in 2019-04-07T20:58:34.284
+User: admin accessing adminHomePnl 2019-04-07T20:58:34.349
+User: admin has logged out 2019-04-07T20:58:36.432
+User: client1 has logged in 2019-04-07T20:58:41.979
+User: client1 accessing clientHomePnl 2019-04-07T20:58:42.045
+User: client1 has logged out 2019-04-07T20:58:43.165
+User: admin has logged in 2019-04-07T20:58:53.458
+User: admin accessing adminHomePnl 2019-04-07T20:58:53.546
+User: admin has logged out 2019-04-07T20:58:55.418
+User: client1 has logged in 2019-04-07T20:59:01.046
+User: client1 accessing clientHomePnl 2019-04-07T20:59:01.118
+User: client1 has logged out 2019-04-07T20:59:03.094
+User: client1 has logged in 2019-04-07T20:59:08.023
+User: admin has logged in 2019-04-07T20:59:22.021
+User: admin accessing adminHomePnl 2019-04-07T20:59:22.098
+User: admin has logged out 2019-04-07T20:59:24.149
+User: client1 has logged in 2019-04-07T20:59:30.733
+User: client1 accessing clientHomePnl 2019-04-07T20:59:30.812
+User: client1 has logged out 2019-04-07T20:59:32.435
+User: client1 has logged in 2019-04-07T20:59:37.899
+User: client1 accessing clientHomePnl 2019-04-07T20:59:37.965
+User: client1 is reading through their purchase history 2019-04-07T20:59:39.246
+User: client1 has logged out 2019-04-07T20:59:45.392
+User: admin has logged in 2019-04-07T21:02:35.871
+User: admin accessing adminHomePnl 2019-04-07T21:02:35.955
+User: admin has logged out 2019-04-07T21:02:37.486
+User: client1 has logged in 2019-04-07T21:02:47.588
+User: client1 accessing clientHomePnl 2019-04-07T21:02:47.661
+User: client1 has logged out 2019-04-07T21:02:48.955
+User: client1 has logged in 2019-04-07T21:02:55.502
+User: client1 accessing clientHomePnl 2019-04-07T21:02:55.563
+User: client1 is reading through their purchase history 2019-04-07T21:02:56.867
+User: client1 has logged out 2019-04-07T21:03:08.123
+User: client2 has logged in 2019-04-07T21:03:13.241
+User: client2 accessing clientHomePnl 2019-04-07T21:03:13.337
+User: client2 has logged out 2019-04-07T21:03:16.985
+User: admin has logged in 2019-04-07T21:03:23.097
+User: admin accessing adminHomePnl 2019-04-07T21:03:23.164
+User: admin has logged out 2019-04-07T21:03:24.485
+User: client1 has logged in 2019-04-07T21:03:29.437
+User: client1 accessing clientHomePnl 2019-04-07T21:03:29.499
+User: client1 has logged out 2019-04-07T21:03:31.217
+User: admin has logged in 2019-04-07T21:03:35.110
+User: admin accessing adminHomePnl 2019-04-07T21:03:35.174
+User: admin has logged out 2019-04-07T21:03:36.491
+User: admin has logged in 2019-04-07T21:03:50.199
+User: admin accessing adminHomePnl 2019-04-07T21:03:50.257
+User: admin has set the role of User: test to 5 2019-04-07T21:03:56.476
+User: admin has logged out 2019-04-07T21:03:57.837
+User: test attempted to logged in 2019-04-07T21:04:01.985
+User: test attempted to logged in 2019-04-07T21:04:06.344
+User: test has logged in 2019-04-07T21:04:10.107
+User: test accessing adminHomePnl 2019-04-07T21:04:10.168
+User: test has logged out 2019-04-07T21:04:16.400
+User: admin has logged in 2019-04-07T21:04:21.362
+User: admin accessing adminHomePnl 2019-04-07T21:04:21.426
+User: admin has logged out 2019-04-07T21:04:40.456
+User: manager has logged in 2019-04-07T21:04:45.171
+User: manager accessing managerHomePnl 2019-04-07T21:04:45.272
+User: manager has logged out 2019-04-07T21:05:42.967
+User: manager has logged in 2019-04-07T21:06:24.591
+User: manager accessing managerHomePnl 2019-04-07T21:06:24.664
+User: admin has logged in 2019-04-07T21:23:34.177
+User: admin accessing adminHomePnl 2019-04-07T21:23:34.258
+User: admin has logged out 2019-04-07T21:23:35.377
+User: staff has logged in 2019-04-07T21:23:40.077
+User: staff accessing staffHomePnl 2019-04-07T21:23:40.164
+Product: Cookies has been added. 2019-04-07T21:23:53.540
+User: staff is reading through their's and client's history 2019-04-07T21:24:13.532
+User: staff is reading through their's and client's history 2019-04-07T21:26:40.561
+Product: Cookies has been deleted. 2019-04-07T21:26:51.795
+User: staff is reading through their's and client's history 2019-04-07T21:28:46.081
+User: staff is reading through their's and client's history 2019-04-07T21:28:53.938
+User: admin has logged in 2019-04-07T21:29:55.051
+User: admin accessing adminHomePnl 2019-04-07T21:29:55.127
+User: staff has logged in 2019-04-07T21:31:12.916
+User: staff accessing staffHomePnl 2019-04-07T21:31:12.995
+Product: Cookies has been added. 2019-04-07T21:31:25.925
+User: staff is reading through their's and client's history 2019-04-07T21:31:27.777
+User: admin has logged in 2019-04-07T21:33:04.267
+User: admin accessing adminHomePnl 2019-04-07T21:33:04.351
+Product: Cookies Amount: 1 was purchased. Remaining stock: 4 2019-04-07T21:34:58.969
+User: admin has logged out 2019-04-07T21:35:20.637
+User: admin has logged in 2019-04-07T21:36:24.393
+User: admin accessing adminHomePnl 2019-04-07T21:36:24.476
+User: admin has logged out 2019-04-07T21:36:31.985
+User: staff has logged in 2019-04-07T21:36:40.903
+User: staff accessing staffHomePnl 2019-04-07T21:36:40.985
+User: staff is reading through their's and client's history 2019-04-07T21:36:42.179
+User: staff is reading through their's and client's history 2019-04-07T21:48:25.179
+User: staff is reading through their's and client's history 2019-04-07T21:48:42.714
+User: staff is reading through their's and client's history 2019-04-07T21:48:52.363
+User: staff is reading through their's and client's history 2019-04-07T21:48:59.087
+User: staff2 with Role: 2 added to database 2019-04-07T21:51:29.727
+User: staff2 has logged in 2019-04-07T21:51:34.679
+User: staff2 accessing clientHomePnl 2019-04-07T21:51:34.755
+User: staff2 has logged out 2019-04-07T21:51:36.796
+User: admin has logged in 2019-04-07T21:51:41.878
+User: admin accessing adminHomePnl 2019-04-07T21:51:41.954
+User: admin has set the role of User: staff2 to 3 2019-04-07T21:51:47.995
+User: admin has logged out 2019-04-07T21:51:48.825
+User: staff2 has logged in 2019-04-07T21:51:53.914
+User: staff2 accessing staffHomePnl 2019-04-07T21:51:53.990
+User: staff2 is reading through their's and client's history 2019-04-07T21:51:56.987
+Product: Bananas has been added. 2019-04-07T21:52:16.906
+User: staff2 is reading through their's and client's history 2019-04-07T21:52:26.089
+User: staff2 has logged out 2019-04-07T21:52:32.317
+User: staff has logged in 2019-04-07T21:52:37.811
+User: staff accessing staffHomePnl 2019-04-07T21:52:37.877
+User: staff is reading through their's and client's history 2019-04-07T21:52:43.687
+User: admin has logged in 2019-04-07T22:17:28.178
+User: admin accessing adminHomePnl 2019-04-07T22:17:28.263
+User: admin has changed the password of User: staff2 2019-04-07T22:17:41.693
+User: admin has logged out 2019-04-07T22:17:43.492
+User: staff2 has logged in 2019-04-07T22:17:49.571
+User: staff2 accessing staffHomePnl 2019-04-07T22:17:49.648
+User: staff2 has logged in 2019-04-07T22:18:59.665
+User: staff2 accessing staffHomePnl 2019-04-07T22:18:59.741
+User: staff2 attempted to logged in 2019-04-07T22:19:09.149
+User: staff2 has logged out 2019-04-07T22:19:17.029
+User: staff2 attempted to logged in 2019-04-07T22:19:22.269
+User: staff2 attempted to logged in 2019-04-07T22:21:22.440
+User: staff2 has logged in 2019-04-07T22:21:29.023
+User: staff2 accessing staffHomePnl 2019-04-07T22:21:29.105
+User: staff2 attempted to logged in 2019-04-07T22:21:34.709
+User: staff2 attempted to logged in 2019-04-07T22:21:41.799
+User: staff2 has logged in 2019-04-07T22:22:42.032
+User: staff2 accessing staffHomePnl 2019-04-07T22:22:42.105
+User: staff2 attempted to logged in 2019-04-07T22:22:55.394
+User: staff2 has logged in 2019-04-07T22:23:04.535
+User: staff2 has logged in 2019-04-07T22:24:25.254
+User: staff2 accessing staffHomePnl 2019-04-07T22:24:25.331
+User: staff2 has logged in 2019-04-07T22:24:37.406
+User: staff2 has changed the password of User: staff2 2019-04-07T22:24:37.475
+User: staff2 attempted to logged in 2019-04-07T22:24:47.858
+User: staff2 has logged in 2019-04-07T22:25:05.107
+User: staff2 has changed the password of User: staff2 2019-04-07T22:25:05.128
+User: staff2 is reading through their's and client's history 2019-04-07T22:25:15.859
+User: staff2 attempted to logged in 2019-04-07T22:36:45.370
+User: staff2 has logged in 2019-04-07T22:36:52.935
+User: staff2 accessing staffHomePnl 2019-04-07T22:36:53.012
+User: staff2 has logged in 2019-04-07T22:37:08.971
+User: staff2 has logged in 2019-04-07T22:37:34.469
+User: staff2 has logged in 2019-04-07T22:38:43.764
+User: staff2 accessing staffHomePnl 2019-04-07T22:38:43.847
+User: staff2 has logged in 2019-04-07T22:39:14.842
+User: staff2 has logged in 2019-04-07T22:40:34.006
+User: staff2 accessing staffHomePnl 2019-04-07T22:40:34.088
+User: staff2 has logged in 2019-04-07T22:40:52.406
+User: staff2 has logged in 2019-04-07T22:42:09.976
+User: staff2 accessing staffHomePnl 2019-04-07T22:42:10.052
+User: staff2 has logged in 2019-04-07T22:42:40.178
+User: staff2 has logged in 2019-04-07T22:44:21.660
+User: staff2 accessing staffHomePnl 2019-04-07T22:44:21.739
+User: staff2 has logged in 2019-04-07T22:44:32.499
+User: staff2 has logged in 2019-04-07T22:47:01.861
+User: staff2 has changed the password of User: staff2 2019-04-07T22:47:01.884
+User: staff2 has logged in 2019-04-07T22:49:27.452
+User: staff2 accessing staffHomePnl 2019-04-07T22:49:27.525
+User: staff2 has logged in 2019-04-07T22:49:45.086
+User: staff2 has changed the password of User: staff2 2019-04-07T22:49:45.110
+User: staff2 is reading through their's and client's history 2019-04-07T22:49:51.598
+User: staff2 is reading through their's and client's history 2019-04-07T22:51:33.164
+User: staff2 is reading through their's and client's history 2019-04-07T22:52:22.008
+User: staff3 with Role: 2 added to database 2019-04-07T23:05:05.185
+User: admin has logged in 2019-04-07T23:05:17.472
+User: admin accessing adminHomePnl 2019-04-07T23:05:17.548
+User: admin has set the role of User: staff3 to 3 2019-04-07T23:05:24.214
+User: admin has logged out 2019-04-07T23:05:45.441
+User: client1 has logged in 2019-04-07T23:05:52.026
+User: client1 accessing clientHomePnl 2019-04-07T23:05:52.096
+User: client1 is reading through their purchase history 2019-04-07T23:05:54.461
+Product: Bananas Amount: 4 was purchased. Remaining stock: 2 2019-04-07T23:06:00.844
+User: client1 is reading through their purchase history 2019-04-07T23:06:02.710
+User: client1 is reading through their purchase history 2019-04-07T23:06:09.390
+User: client1 is reading through their purchase history 2019-04-07T23:06:40.870
+User: client1 is reading through their purchase history 2019-04-07T23:06:46.584
+User: client1 has logged out 2019-04-07T23:06:56.685
+User: client2 has logged in 2019-04-07T23:07:03.138
+User: client2 accessing clientHomePnl 2019-04-07T23:07:03.204
+User: client2 is reading through their purchase history 2019-04-07T23:07:05.069
+Product: Rocks Amount: 2 was purchased. Remaining stock: 18 2019-04-07T23:07:12.865
+User: client2 is reading through their purchase history 2019-04-07T23:07:14.174
+User: client2 has logged out 2019-04-07T23:07:17.045
+User: client1 has logged in 2019-04-07T23:07:22.366
+User: client1 accessing clientHomePnl 2019-04-07T23:07:22.431
+User: client1 is reading through their purchase history 2019-04-07T23:07:23.137
+User: client1 is reading through their purchase history 2019-04-07T23:07:25.372
+User: client1 is reading through their purchase history 2019-04-07T23:07:28.419
+User: client1 is reading through their purchase history 2019-04-07T23:07:32.967
+User: client1 is reading through their purchase history 2019-04-07T23:07:38.772
+User: client1 is reading through their purchase history 2019-04-07T23:07:41.867
+User: client1 is reading through their purchase history 2019-04-07T23:07:42.680
+User: client1 is reading through their purchase history 2019-04-07T23:07:46.304
+User: client1 has logged out 2019-04-07T23:07:47.817
+User: staff has logged in 2019-04-07T23:07:57.088
+User: staff accessing staffHomePnl 2019-04-07T23:07:57.185
+User: staff is reading through their's and client's history 2019-04-07T23:07:58.328
+User: staff is reading through their's and client's history 2019-04-07T23:08:08.236
+User: staff is reading through their's and client's history 2019-04-07T23:08:16.059
+User: staff is reading through their's and client's history 2019-04-07T23:08:26.464
+User: client1 has logged in 2019-04-07T23:09:22.203
+User: client1 accessing clientHomePnl 2019-04-07T23:09:22.290
+User: client1 is reading through their purchase history 2019-04-07T23:09:22.838
+User: client1 is reading through their purchase history 2019-04-07T23:09:28.419
+User: client1 is reading through their purchase history 2019-04-07T23:09:34.467
+User: client1 is reading through their purchase history 2019-04-07T23:09:39.090
+User: client2 has logged in 2019-04-07T23:14:06.072
+User: client2 accessing clientHomePnl 2019-04-07T23:14:06.148
+User: client2 is reading through their purchase history 2019-04-07T23:14:06.901
+User: client2 is reading through their purchase history 2019-04-07T23:14:08.453
+User: client2 is reading through their purchase history 2019-04-07T23:14:14.065
+User: client2 is reading through their purchase history 2019-04-07T23:14:20.603
+User: client2 has logged out 2019-04-07T23:14:22.819
+User: client1 has logged in 2019-04-07T23:14:32.835
+User: client1 accessing clientHomePnl 2019-04-07T23:14:32.904
+User: client1 is reading through their purchase history 2019-04-07T23:14:33.856
+User: client1 is reading through their purchase history 2019-04-07T23:14:46.112
+User: client1 is reading through their purchase history 2019-04-07T23:14:47.825
+User: client1 is reading through their purchase history 2019-04-07T23:15:00.425
+User: client1 has logged out 2019-04-07T23:15:01.208
+User: staff has logged in 2019-04-07T23:15:05.792
+User: staff accessing staffHomePnl 2019-04-07T23:15:05.885
+User: staff is reading through their's and client's history 2019-04-07T23:15:07.624
+User: staff has logged out 2019-04-07T23:15:19.285
+User: manager has logged in 2019-04-07T23:15:24.493
+User: manager accessing managerHomePnl 2019-04-07T23:15:24.555
+User: manager has logged in 2019-04-07T23:21:56.208
+User: manager accessing managerHomePnl 2019-04-07T23:21:56.282
+User: manager is reading through manager, staff and client's history 2019-04-07T23:21:56.714
+User: manager is reading through manager, staff and client's history 2019-04-07T23:22:00.565
+User: manager has logged out 2019-04-07T23:22:02.740
+User: admin has logged in 2019-04-07T23:22:07.544
+User: admin accessing adminHomePnl 2019-04-07T23:22:07.612

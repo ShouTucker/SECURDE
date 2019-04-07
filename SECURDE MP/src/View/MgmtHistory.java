@@ -52,8 +52,10 @@ public class MgmtHistory extends javax.swing.JPanel {
         ArrayList<History> history = null;
                 
 //      LOAD CONTENTS
-        if(role == 5 || role == 4)
+        if(role == 5)
             history = sqlite.getHistory();
+        else if(role == 4)
+            history = sqlite.getManagerHistory(username);
         else if(role == 3)
             history = sqlite.getStaffHistory(username);
         else if(role == 2)
@@ -116,7 +118,7 @@ public class MgmtHistory extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Username", "Name", "Stock", "Price", "Total", "Timestamp"
+                "Username", "Name", "Current Stock", "Price", "Total", "Timestamp"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -133,9 +135,9 @@ public class MgmtHistory extends javax.swing.JPanel {
         if (table.getColumnModel().getColumnCount() > 0) {
             table.getColumnModel().getColumn(0).setPreferredWidth(160);
             table.getColumnModel().getColumn(1).setPreferredWidth(160);
-            table.getColumnModel().getColumn(2).setMinWidth(80);
-            table.getColumnModel().getColumn(3).setMinWidth(100);
-            table.getColumnModel().getColumn(4).setMinWidth(100);
+            table.getColumnModel().getColumn(2).setMinWidth(100);
+            table.getColumnModel().getColumn(3).setMinWidth(80);
+            table.getColumnModel().getColumn(4).setMinWidth(80);
             table.getColumnModel().getColumn(5).setPreferredWidth(240);
         }
 
@@ -211,10 +213,10 @@ public class MgmtHistory extends javax.swing.JPanel {
                 history = sqlite.getClientHistory(username);
             
             for(int nCtr = 0; nCtr < history.size(); nCtr++){
-                if(searchFld.getText().contains(history.get(nCtr).getUsername()) || 
-                   history.get(nCtr).getUsername().contains(searchFld.getText()) || 
-                   searchFld.getText().contains(history.get(nCtr).getName()) || 
-                   history.get(nCtr).getName().contains(searchFld.getText())){
+                if(searchFld.getText().toLowerCase().contains(history.get(nCtr).getUsername().toLowerCase()) || 
+                   history.get(nCtr).getUsername().toLowerCase().contains(searchFld.getText().toLowerCase()) || 
+                   searchFld.getText().toLowerCase().contains(history.get(nCtr).getName().toLowerCase()) || 
+                   history.get(nCtr).getName().toLowerCase().contains(searchFld.getText().toLowerCase())){
                 
                     Product product = sqlite.getProduct(history.get(nCtr).getName());
                     tableModel.addRow(new Object[]{

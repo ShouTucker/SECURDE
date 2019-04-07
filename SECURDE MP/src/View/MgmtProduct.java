@@ -245,7 +245,7 @@ public class MgmtProduct extends javax.swing.JPanel {
             System.out.println(stockFld.getText());
             System.out.println(priceFld.getText());
             
-            sqlite.addProduct(nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+            sqlite.addProduct(username, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
             init(username, logWrite);
         }
     }//GEN-LAST:event_addBtnActionPerformed

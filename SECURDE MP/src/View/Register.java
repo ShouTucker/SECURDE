@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
 public class Register extends javax.swing.JPanel {
 
@@ -87,10 +88,13 @@ public class Register extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(confpass)
                     .addComponent(password, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(errorField)
                     .addComponent(username, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(200, 200, 200))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(errorField)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,6 +157,11 @@ public class Register extends javax.swing.JPanel {
         return username.getText().equals("");
     }
     
+    private boolean checkPasswordStrength(){
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$";
+        return Pattern.matches(passwordRegex, String.valueOf(password.getPassword()));
+    }
+    
     private boolean checkError(){
         if(checkUsernameIsBlank()){
             errorField.setText("Username Field is Blank");
@@ -171,6 +180,11 @@ public class Register extends javax.swing.JPanel {
         
         if(!checkPassEqual()){
             errorField.setText("Please retype your password");
+            return false;
+        }
+        
+        if(!checkPasswordStrength()){
+            errorField.setText("Password must be 8 characters long, have at least 1 lowercase and uppercase letter, a number and a special character");
             return false;
         }
         
