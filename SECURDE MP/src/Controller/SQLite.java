@@ -13,6 +13,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -191,13 +192,15 @@ public class SQLite {
         }
     }
     
-    public void buyProduct(String product, int stock, int amountPurchased){
-        String sql = "UPDATE product SET stock = '" +stock+ "' WHERE name = '" +product+ "';";
-        
+    public void buyProduct(String username, String product, int stock, int amountPurchased){
+        String sql = "UPDATE product SET stock = '" +(stock-amountPurchased)+ "' WHERE name = '" +product+ "';";
+        String time = ""+LocalDateTime.now();
+        String replace = time.replace("T", " ");
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
             logWrite.writeToLog("Product: " + product + " Amount: " + amountPurchased + " was purchased. Remaining stock: " + (stock-amountPurchased));
+            addHistory(username, product, amountPurchased, replace);
         } catch (Exception ex) {
             logWrite.writeToLog("ERROR Product: " + product + " could not be purchased");
         }

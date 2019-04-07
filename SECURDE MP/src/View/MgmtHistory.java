@@ -185,6 +185,7 @@ public class MgmtHistory extends javax.swing.JPanel {
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         JTextField searchFld = new JTextField("0");
+        final int role = getUserRole(username);
         designer(searchFld, "SEARCH USERNAME OR PRODUCT");
 
         Object[] message = {
@@ -200,7 +201,15 @@ public class MgmtHistory extends javax.swing.JPanel {
             }
 
 //          LOAD CONTENTS
-            ArrayList<History> history = sqlite.getHistory();
+            ArrayList<History> history = new ArrayList<>();
+            
+            if(role == 5 || role == 4)
+                history = sqlite.getHistory();
+            else if(role == 3)
+                history = sqlite.getStaffHistory(username);
+            else if(role == 2)
+                history = sqlite.getClientHistory(username);
+            
             for(int nCtr = 0; nCtr < history.size(); nCtr++){
                 if(searchFld.getText().contains(history.get(nCtr).getUsername()) || 
                    history.get(nCtr).getUsername().contains(searchFld.getText()) || 

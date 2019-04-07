@@ -80,14 +80,11 @@ public class MgmtUser extends javax.swing.JPanel {
 
     private void prepareUser(){
         final int role = getUserRole(username);
-                
-        if(role == 4 || role == 5){
-            editRoleBtn.setVisible(true);
-        }
         
         if(role == 5){
             deleteBtn.setVisible(true);
             lockBtn.setVisible(true);
+            editRoleBtn.setVisible(true);
         }
         
         else if(role == 2 || role == 3 || role == 4){

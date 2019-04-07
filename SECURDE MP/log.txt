@@ -462,3 +462,115 @@ Product: Potatoes Edited to: Product: Tomatoes Stock: 50 Price: 3.0 2019-04-05T2
 Product: Tomatoes Amount: 10 was purchased. Remaining stock: 40 2019-04-05T21:16:55.643
 Product: Tomatoes has been deleted. 2019-04-05T21:16:59.308
 Product: Potatoes has been added. 2019-04-05T21:17:10.480
+User: admin has logged in 2019-04-07T15:09:39.455
+User: admin accessing adminHomePnl 2019-04-07T15:09:39.535
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:11:29.085
+User: client2 has logged in 2019-04-07T15:24:12.589
+User: client2 accessing clientHomePnl 2019-04-07T15:24:12.658
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:24:25.632
+User: client2 is reading through their purchase history 2019-04-07T15:24:28.924
+User: client2 has logged out 2019-04-07T15:24:47.882
+User: admin attempted to logged in 2019-04-07T15:24:53.401
+User: admin has logged in 2019-04-07T15:24:59.538
+User: admin accessing adminHomePnl 2019-04-07T15:24:59.603
+User: admin has logged in 2019-04-07T15:26:29.384
+User: admin accessing adminHomePnl 2019-04-07T15:26:29.462
+User: admin has logged in 2019-04-07T15:34:09.457
+User: admin accessing adminHomePnl 2019-04-07T15:34:09.536
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:34:28.923
+ERROR Product: Potatoes could not be purchased 2019-04-07T15:34:28.971
+User: admin has logged in 2019-04-07T15:35:19.408
+User: admin accessing adminHomePnl 2019-04-07T15:35:19.479
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:35:29.382
+ERROR Product: Potatoes could not be purchased 2019-04-07T15:35:29.389
+User: admin has logged in 2019-04-07T15:39:48.880
+User: admin accessing adminHomePnl 2019-04-07T15:39:48.951
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:39:57.360
+ERROR Product: Potatoes could not be purchased 2019-04-07T15:39:57.368
+User: admin has logged in 2019-04-07T15:40:18.767
+User: admin accessing adminHomePnl 2019-04-07T15:40:18.838
+Product: Potatoes Amount: 1 was purchased. Remaining stock: 98 2019-04-07T15:40:24.645
+ERROR Product: Potatoes could not be purchased 2019-04-07T15:40:24.652
+User: admin has logged in 2019-04-07T15:45:40.500
+User: admin accessing adminHomePnl 2019-04-07T15:45:40.573
+Product: Potatoes Amount: 2 was purchased. Remaining stock: 97 2019-04-07T15:45:47.125
+User: client2 has logged in 2019-04-07T15:47:30.873
+User: client2 accessing clientHomePnl 2019-04-07T15:47:30.944
+User: client2 is reading through their purchase history 2019-04-07T15:47:32.907
+Product: Potatoes Amount: 10 was purchased. Remaining stock: 89 2019-04-07T15:47:40.417
+User: client2 is reading through their purchase history 2019-04-07T15:47:43.154
+User: admin has logged in 2019-04-07T15:48:50.124
+User: admin accessing adminHomePnl 2019-04-07T15:48:50.202
+User: admin has set the role of User: client1 to 2 2019-04-07T16:09:53.793
+User: admin has logged out 2019-04-07T16:10:41.679
+User: client1 has logged in 2019-04-07T16:10:53.096
+User: client1 accessing clientHomePnl 2019-04-07T16:10:53.170
+User: client1 is reading through their purchase history 2019-04-07T16:10:57.679
+Product: Rocks Amount: 69 was purchased. Remaining stock: 0 2019-04-07T16:11:09.530
+User: client1 is reading through their purchase history 2019-04-07T16:11:10.952
+Product: Rocks Amount: 10 was purchased. Remaining stock: -10 2019-04-07T16:11:33.221
+User: client1 has logged out 2019-04-07T16:11:45.882
+User: staff has logged in 2019-04-07T16:11:52.601
+User: staff accessing staffHomePnl 2019-04-07T16:11:52.659
+Product: Rocks Edited to: Product: Rocks Stock: 20 Price: 1.0 2019-04-07T16:12:11.366
+User: staff is reading through their's and client's history 2019-04-07T16:12:13.209
+User: staff is reading through their's and client's history 2019-04-07T16:12:17.167
+User: staff is reading through their's and client's history 2019-04-07T16:13:04.055
+User: staff is reading through their's and client's history 2019-04-07T16:13:05.315
+User: staff is reading through their's and client's history 2019-04-07T16:13:05.605
+User: staff is reading through their's and client's history 2019-04-07T16:13:06.883
+User: admin has logged in 2019-04-07T16:14:35.603
+User: admin accessing adminHomePnl 2019-04-07T16:14:35.687
+User: admin has logged in 2019-04-07T16:25:41.584
+User: admin accessing adminHomePnl 2019-04-07T16:25:41.661
+User: admin has logged in 2019-04-07T16:26:24.673
+User: admin accessing adminHomePnl 2019-04-07T16:26:24.751
+Product: Potatoes Amount: 89 was purchased. Remaining stock: 0 2019-04-07T16:26:59.234
+User: admin has logged in 2019-04-07T16:30:00.456
+User: admin accessing adminHomePnl 2019-04-07T16:30:00.544
+Product: Potatoes Edited to: Product: Potatoes Stock: 80 Price: 5.0 2019-04-07T16:30:09.809
+Product: Potatoes Amount: 80 was purchased. Remaining stock: 0 2019-04-07T16:38:35.522
+User: admin has logged in 2019-04-07T16:39:46.323
+User: admin accessing adminHomePnl 2019-04-07T16:39:46.435
+Product: Potatoes Edited to: Product: Potatoes Stock: 80 Price: 5.0 2019-04-07T16:39:57.143
+Product: Potatoes Amount: 40 was purchased. Remaining stock: 40 2019-04-07T16:40:04.165
+User: admin has logged in 2019-04-07T16:41:14.860
+User: admin accessing adminHomePnl 2019-04-07T16:41:14.970
+Product: Potatoes Amount: 20 was purchased. Remaining stock: 20 2019-04-07T16:41:25.802
+User: admin has logged out 2019-04-07T16:41:29.675
+User: client1 has logged in 2019-04-07T16:41:37.991
+User: client1 accessing clientHomePnl 2019-04-07T16:41:38.070
+User: client1 is reading through their purchase history 2019-04-07T16:41:43.329
+User: client1 is reading through their purchase history 2019-04-07T16:41:45.129
+Product: Potatoes Amount: 20 was purchased. Remaining stock: 0 2019-04-07T16:41:53.241
+User: client1 is reading through their purchase history 2019-04-07T16:41:54.601
+User: client1 is reading through their purchase history 2019-04-07T16:41:59.184
+User: client1 has logged out 2019-04-07T16:42:18.419
+User: admin has logged in 2019-04-07T17:01:17.968
+User: admin accessing adminHomePnl 2019-04-07T17:01:18.069
+Product: Bananas has been added. 2019-04-07T17:01:43.801
+Product: Bananas has been deleted. 2019-04-07T17:01:52.354
+User: admin has logged out 2019-04-07T17:01:55.693
+User: admin has logged in 2019-04-07T17:02:00.830
+Product: Bananas has been added. 2019-04-07T17:02:14.862
+User: admin has logged out 2019-04-07T17:02:16.842
+User: admin has logged in 2019-04-07T17:02:21.994
+Product: Bananas has been deleted. 2019-04-07T17:02:31.144
+User: client1 has logged in 2019-04-07T17:05:21.380
+User: client1 accessing clientHomePnl 2019-04-07T17:05:21.485
+User: client1 is reading through their purchase history 2019-04-07T17:05:22.642
+User: client1 is reading through their purchase history 2019-04-07T17:05:30.620
+User: client1 is reading through their purchase history 2019-04-07T17:05:32.453
+User: client1 is reading through their purchase history 2019-04-07T17:05:41.182
+User: client1 is reading through their purchase history 2019-04-07T17:05:47.148
+User: client1 has logged in 2019-04-07T17:17:08.012
+User: client1 accessing clientHomePnl 2019-04-07T17:17:08.093
+User: client1 is reading through their purchase history 2019-04-07T17:17:12.317
+User: client1 is reading through their purchase history 2019-04-07T17:17:15.891
+User: client1 is reading through their purchase history 2019-04-07T17:17:43.830
+User: client1 is reading through their purchase history 2019-04-07T17:17:46.277
+User: client1 has logged out 2019-04-07T17:18:32.360
+User: staff has logged in 2019-04-07T17:18:38.441
+User: staff accessing staffHomePnl 2019-04-07T17:18:38.510
+User: staff is reading through their's and client's history 2019-04-07T17:18:46.784
+User: staff is reading through their's and client's history 2019-04-07T17:20:01.859
