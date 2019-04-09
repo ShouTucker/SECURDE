@@ -1158,3 +1158,36 @@ User: manager is reading through manager, staff and client's history 2019-04-07T
 User: manager has logged out 2019-04-07T23:22:02.740
 User: admin has logged in 2019-04-07T23:22:07.544
 User: admin accessing adminHomePnl 2019-04-07T23:22:07.612
+User: admin has logged in 2019-04-08T21:43:08.185
+User: admin accessing adminHomePnl 2019-04-08T21:43:08.333
+User: admin has changed the password of User: admin 2019-04-08T21:44:40.575
+User: admin has logged out 2019-04-08T21:44:46.243
+User: admin attempted to logged in 2019-04-08T21:45:28.187
+User: admin has logged in 2019-04-08T21:45:35.864
+User: admin accessing adminHomePnl 2019-04-08T21:45:35.937
+User: admin attempted to logged in 2019-04-09T20:06:11.446
+User: admin has logged in 2019-04-09T20:06:24.014
+User: admin accessing adminHomePnl 2019-04-09T20:06:24.094
+User: admin has logged out 2019-04-09T20:26:49.054
+User: manager has logged in 2019-04-09T20:26:56.171
+User: manager accessing managerHomePnl 2019-04-09T20:26:56.239
+User: manager is reading through manager, staff and client's history 2019-04-09T20:27:00.084
+User: manager has logged out 2019-04-09T20:28:04.345
+User: admin has logged in 2019-04-09T20:28:14.780
+User: admin accessing adminHomePnl 2019-04-09T20:28:14.852
+User: aaaaaa with Role: 2 added to database 2019-04-09T21:32:56.721
+User: admin has logged in 2019-04-09T21:33:31.611
+User: admin accessing adminHomePnl 2019-04-09T21:33:31.740
+User: aaaaaa has been deleted. 2019-04-09T21:33:38.002
+User: aaaa with Role: 2 added to database 2019-04-09T21:34:00.818
+User: admin has logged in 2019-04-09T21:38:12.061
+User: admin accessing adminHomePnl 2019-04-09T21:38:12.136
+User: aaaa has been deleted. 2019-04-09T21:38:15.971
+User: admin has logged out 2019-04-09T21:38:16.712
+User: aaaaaaaa with Role: 2 added to database 2019-04-09T21:40:14.987
+User: admin has logged in 2019-04-09T21:54:24.556
+User: admin accessing adminHomePnl 2019-04-09T21:54:24.631
+User: admin has logged in 2019-04-09T21:58:13.442
+User: admin accessing adminHomePnl 2019-04-09T21:58:13.519
+User: admin has changed the password of User: aaaaaaaa 2019-04-09T21:59:02.412
+User: aaaaaaaa has been deleted. 2019-04-09T21:59:06.382

@@ -286,7 +286,7 @@ public class MgmtUser extends javax.swing.JPanel {
                 JTextField oldPassword = new JPasswordField();
                 JTextField newPassword = new JPasswordField();
                 JTextField confpass = new JPasswordField();
-                String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$";
+                String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,15}$";
                 designer(oldPassword, "OLD PASSWORD");
                 designer(newPassword, "NEW PASSWORD");
                 designer(confpass, "CONFIRM PASSWORD");
@@ -323,14 +323,14 @@ public class MgmtUser extends javax.swing.JPanel {
                                     }
                                 }
                                 else
-                                    JOptionPane.showMessageDialog(null, "ERROR: Password must be 8 characters long, have at least 1 lowercase and uppercase letter, a number and a special character", "ERROR",JOptionPane.ERROR_MESSAGE);
+                                    JOptionPane.showMessageDialog(null, "ERROR: Password must be 8 characters long and less than or equal to 15 characters, have at least 1 lowercase and uppercase letter, a number and a special character", "ERROR",JOptionPane.ERROR_MESSAGE);
                             }
                             else{
                                 JOptionPane.showMessageDialog(null, "ERROR: New Password and confirmation do not match", "ERROR",JOptionPane.ERROR_MESSAGE);
                             }
                         }
                         else
-                            JOptionPane.showMessageDialog(null, "ERROR: Old password does not match", "ERROR",JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "ERROR: Old password is incorrect", "ERROR",JOptionPane.ERROR_MESSAGE);
                     } catch (NoSuchAlgorithmException ex) {
                         Logger.getLogger(MgmtUser.class.getName()).log(Level.SEVERE, null, ex);
                     } catch (InvalidKeySpecException ex) {
