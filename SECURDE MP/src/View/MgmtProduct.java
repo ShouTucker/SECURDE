@@ -211,16 +211,20 @@ public class MgmtProduct extends javax.swing.JPanel {
             String productStock = tableModel.getValueAt(table.getSelectedRow(), 1).toString();
             
             if (result == JOptionPane.OK_OPTION) {
-                int stockNum = Integer.parseInt(productStock);
-                if(Integer.parseInt(stockFld.getText()) <= stockNum){
-                    System.out.println(stockFld.getText());               
-                    tableModel.setValueAt(stockNum - Integer.parseInt(stockFld.getText()), table.getSelectedRow(), 1);
+                if(isNumeric(stockFld.getText())){
+                    int stockNum = Integer.parseInt(productStock);
+                    if(Integer.parseInt(stockFld.getText()) <= stockNum){
+                        System.out.println(stockFld.getText());               
+                        tableModel.setValueAt(stockNum - Integer.parseInt(stockFld.getText()), table.getSelectedRow(), 1);
 
-                    sqlite.buyProduct(username, product, stockNum, Integer.parseInt(stockFld.getText()));
-                } 
-                else{
-                    JOptionPane.showMessageDialog(null, "Cannot buy more than " + stockNum + " " +tableModel.getValueAt(table.getSelectedRow(), 0).toString(), "",JOptionPane.ERROR_MESSAGE);
+                        sqlite.buyProduct(username, product, stockNum, Integer.parseInt(stockFld.getText()));
+                    } 
+                    else{
+                        JOptionPane.showMessageDialog(null, "Cannot buy more than " + stockNum + " " +tableModel.getValueAt(table.getSelectedRow(), 0).toString(), "",JOptionPane.ERROR_MESSAGE);
+                    }
                 }
+                else
+                    JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer", "ERROR",JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_purchaseBtnActionPerformed
@@ -241,12 +245,16 @@ public class MgmtProduct extends javax.swing.JPanel {
         int result = JOptionPane.showConfirmDialog(null, message, "ADD PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
         if (result == JOptionPane.OK_OPTION) {
-            System.out.println(nameFld.getText());
-            System.out.println(stockFld.getText());
-            System.out.println(priceFld.getText());
-            
-            sqlite.addProduct(username, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
-            init(username, logWrite);
+            if(isDouble(priceFld.getText()) && isDouble(stockFld.getText())){
+                System.out.println(nameFld.getText());
+                System.out.println(stockFld.getText());
+                System.out.println(priceFld.getText());
+
+                sqlite.addProduct(username, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+                init(username, logWrite);
+            }
+            else
+                JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer for stock or price field", "ERROR",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -267,13 +275,17 @@ public class MgmtProduct extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, message, "EDIT PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
             if (result == JOptionPane.OK_OPTION) {
-                System.out.println(nameFld.getText());
-                System.out.println(stockFld.getText());
-                System.out.println(priceFld.getText());
-                String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
-                
-                sqlite.editProduct(product, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
-                init(username, logWrite);
+                if(isDouble(priceFld.getText()) && isDouble(stockFld.getText())){
+                    System.out.println(nameFld.getText());
+                    System.out.println(stockFld.getText());
+                    System.out.println(priceFld.getText());
+                    String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
+
+                    sqlite.editProduct(product, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+                    init(username, logWrite);
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer for stock or price field", "ERROR",JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_editBtnActionPerformed
@@ -293,7 +305,25 @@ public class MgmtProduct extends javax.swing.JPanel {
     public int getUserRole(String username){
         return sqlite.getRole(username);
     }
-
+    
+    private boolean isNumeric(String str) { 
+        try {  
+            Integer.parseInt(str);  
+            return true;
+        } catch(NumberFormatException e){  
+            return false;  
+        }  
+    }
+    
+    private boolean isDouble(String str) { 
+        try {  
+            Double.parseDouble(str);  
+            return true;
+        } catch(NumberFormatException e){  
+            return false;  
+        }  
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
     private javax.swing.JButton deleteBtn;
