@@ -158,8 +158,13 @@ public class Register extends javax.swing.JPanel {
     }
     
     private boolean checkPasswordStrength(){
-        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,}$";
+        String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).{8,15}$";
         return Pattern.matches(passwordRegex, String.valueOf(password.getPassword()));
+    }
+    
+    private boolean checkUsernameValid(){
+        String usernameRegex = "^[a-zA-Z0-9_\\-]{8,15}$"; 
+        return Pattern.matches(usernameRegex, username.getText());
     }
     
     private boolean checkError(){
@@ -184,7 +189,12 @@ public class Register extends javax.swing.JPanel {
         }
         
         if(!checkPasswordStrength()){
-            errorField.setText("Password must be 8 characters long, have at least 1 lowercase and uppercase letter, a number and a special character");
+            errorField.setText("Password must be 8 characters long and less than or equal to 15 characters, have at least 1 lowercase and uppercase letter, a number and a special character");
+            return false;
+        }
+        
+        if(!checkUsernameValid()){
+            errorField.setText("Username must be 8 characters long and less than or equal to 15 characters and only contain uppercase letters[A-Z], lowercase letters[a-z], numbers[0-9], underscore[_] and hyphen[-]");
             return false;
         }
         
