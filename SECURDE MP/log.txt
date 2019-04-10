@@ -1237,3 +1237,19 @@ User: admin has logged in 2019-04-10T00:22:44.403
 User: admin accessing adminHomePnl 2019-04-10T00:22:44.475
 User: admin has logged in 2019-04-10T11:27:26.508
 User: admin accessing adminHomePnl 2019-04-10T11:27:26.585
+User: admin accessing adminHomePnl 2019-04-10T11:29:49.332
+User: admin has logged out 2019-04-10T11:30:31.480
+User: aaaaaaaa accessing staffHomePnl 2019-04-10T11:30:39.517
+User: staff3 accessing staffHomePnl 2019-04-10T11:35:51.679
+User: test1111 accessing clientHomePnl 2019-04-10T11:38:30.111
+User: test1111 has logged out 2019-04-10T11:38:32.835
+User: admin accessing adminHomePnl 2019-04-10T11:38:39.368
+User: admin accessing adminHomePnl 2019-04-10T11:39:28.582
+User: admin accessing adminHomePnl 2019-04-10T11:48:00.031
+User: admin accessing adminHomePnl 2019-04-10T11:52:37.448
+User: admin accessing adminHomePnl 2019-04-10T11:54:25.600
+User: admin accessing adminHomePnl 2019-04-10T11:56:31.390
+User: admin has logged out 2019-04-10T11:57:15.949
+User: admin accessing adminHomePnl 2019-04-10T11:57:25.015
+User: admin accessing adminHomePnl 2019-04-10T11:57:59.653
+User: admin has logged out 2019-04-10T11:58:16.259

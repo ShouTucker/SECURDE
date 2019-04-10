@@ -8,9 +8,11 @@ import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDateTime;
@@ -139,70 +141,88 @@ public class SQLite {
     }
     
     public void addHistory(String username, String name, int stock, String timestamp) {
-        String sql = "INSERT INTO history(username,name,stock,timestamp) VALUES('" + username + "','" + name + "','" + stock + "','" + timestamp + "')";
+        String sql = "INSERT INTO history(username,name,stock,timestamp) VALUES(?,?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,username);
+            stmt.setString(2,name);
+            stmt.setInt(3,stock);
+            stmt.setString(4,timestamp);
+            stmt.executeUpdate();
         } catch (Exception ex) {}
     }
     
     public void addLogs(String event, String username, String desc, String timestamp) {
-        String sql = "INSERT INTO logs(event,username,desc,timestamp) VALUES('" + event + "','" + username + "','" + desc + "','" + timestamp + "')";
+        String sql = "INSERT INTO logs(event,username,desc,timestamp) VALUES(?,?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,event);
+            stmt.setString(2,username);
+            stmt.setString(3,desc);
+            stmt.setString(4,timestamp);
+            stmt.executeUpdate();
         } catch (Exception ex) {}
     }
     
     public void addProduct(String username, String name, int stock, double price) {
-        String sql = "INSERT INTO product(name,stock,price) VALUES('" + name + "','" + stock + "','" + price + "')";
+        String sql = "INSERT INTO product(name,stock,price) VALUES(?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("Product: " + name + " has been added.");
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,name);
+            stmt.setInt(2,stock);
+            stmt.setDouble(3,price);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("Product: " + name + " has been added.");
             addHistory(username, name, stock, getTime());
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR: Product: " + name + " was not added.");
+            //logWrite.writeToLog("ERROR: Product: " + name + " was not added.");
         }
     }
     
     public void removeProduct(String product){
-        String sql = "DELETE FROM product WHERE name='" + product + "';";
+        String sql = "DELETE FROM product WHERE name=?";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
-            logWrite.writeToLog("Product: " + product + " has been deleted.");
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1,product);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("Product: " + product + " has been deleted.");
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR Product: " + product + " was not deleted.");
+            //logWrite.writeToLog("ERROR Product: " + product + " was not deleted.");
         }
     }
     
     public void editProduct(String product, String newProduct, int stock, float price){
-        String sql = "UPDATE product SET name = '" +newProduct+ "', stock = '" + stock + "', price = '" + price + "' WHERE name = '" +product+ "';";
+        String sql = "UPDATE product SET name = ?, stock = ?, price = ? WHERE name = ?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("Product: " + product + " Edited to: Product: " + newProduct + " Stock: " + stock + " Price: " + price);
+            PreparedStatement stmt = conn.prepareStatement("UPDATE product SET name=?, stock=?, price=? WHERE name=?")){
+            stmt.setString(1,newProduct);
+            stmt.setInt(2,stock);
+            stmt.setFloat(3,price);
+            stmt.setString(4,product);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("Product: " + product + " Edited to: Product: " + newProduct + " Stock: " + stock + " Price: " + price);
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR Product: " + product + " could not be edited");
+            //logWrite.writeToLog("ERROR Product: " + product + " could not be edited");
         }
     }
     
     public void buyProduct(String username, String product, int stock, int amountPurchased){
-        String sql = "UPDATE product SET stock = '" +(stock-amountPurchased)+ "' WHERE name = '" +product+ "';";
+        String sql = "UPDATE product SET stock = ? WHERE name = ?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("Product: " + product + " Amount: " + amountPurchased + " was purchased. Remaining stock: " + (stock-amountPurchased));
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setInt(1,stock-amountPurchased);
+            stmt.setString(2,product);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("Product: " + product + " Amount: " + amountPurchased + " was purchased. Remaining stock: " + (stock-amountPurchased));
             addHistory(username, product, (stock-amountPurchased), getTime());
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR Product: " + product + " could not be purchased");
+            //logWrite.writeToLog("ERROR Product: " + product + " could not be purchased");
         }
     }
     
@@ -231,21 +251,23 @@ public class SQLite {
         String[] parts = hashedPass.split(":");
         byte[] salt = fromHex(parts[1]);
         
-        String sql = "INSERT INTO users(username,password,salt) VALUES('" + username + "','" + hashedPass + "','" + salt + "')";
-        
+        String sql = "INSERT INTO users(username,password,salt) VALUES(?,?,?)";
+        //String sql = "INSERT INTO users(username,password) VALUES(?,?)";
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            System.out.println(sql);
-            logWrite.writeToLog("User: " + username + " with Role: 2 added to database");
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            stmt.setString(2, hashedPass);
+            stmt.setBytes(3, salt);
+            stmt.executeUpdate();
+            //System.out.println(sql);
+            //logWrite.writeToLog("User: " + username + " with Role: 2 added to database");
 //  For this activity, we would not be using prepared statements first.
-//      String sql = "INSERT INTO users(username,password) VALUES(?,?)";
-//      PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//      pstmt.setString(1, username);
-//      pstmt.setString(2, password);
-//      pstmt.executeUpdate();
+        //PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        //pstmt.setString(1, username);
+        //pstmt.setString(2, password);
+        //pstmt.executeUpdate();
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR User: " + username + " with Role: 2 was NOT added to database");
+            //logWrite.writeToLog("ERROR User: " + username + " with Role: 2 was NOT added to database");
         }
     }
     
@@ -254,39 +276,44 @@ public class SQLite {
         String[] parts = hashedPass.split(":");
         byte[] salt = fromHex(parts[1]);
         
-        String sql = "INSERT INTO users(username,password,salt,role) VALUES('" + username + "','" + hashedPass + "','" + salt + "','" + role + "')";
+        String sql = "INSERT INTO users(username,password,salt,role) VALUES(?,?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            
-            logWrite.writeToLog("User: " + username + " with Role: " + role + " added to database");
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            stmt.setString(2, hashedPass);
+            stmt.setBytes(3, salt);
+            stmt.setInt(4, role);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("User: " + username + " with Role: " + role + " added to database");
             
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR User: " + username + " with Role: " + role + " was NOT added to database");
+            //logWrite.writeToLog("ERROR User: " + username + " with Role: " + role + " was NOT added to database");
             ex.printStackTrace();
         }
     }
     
     public void removeUser(String username) {
-        String sql = "DELETE FROM users WHERE username='" + username + "';";
+        String sql = "DELETE FROM users WHERE username=?";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
-            logWrite.writeToLog("User: " + username + " has been deleted.");
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("User: " + username + " has been deleted.");
         } catch (Exception ex) {
-            logWrite.writeToLog("ERROR User: " + username + " was not deleted.");
+            //logWrite.writeToLog("ERROR User: " + username + " was not deleted.");
         }
     }
     
     public User getUser(String username){
-        String sql = "SELECT id, username, password, salt, role, locked FROM users WHERE username='" + username.toLowerCase() +"' COLLATE NOCASE;";
+        String sql = "SELECT id, username, password, salt, role, locked FROM users WHERE username=? COLLATE NOCASE";
         User user = null;
-        
+        username=username.toLowerCase();
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,username);
+            ResultSet rs = stmt.executeQuery();
             
             user = new User(rs.getInt("id"),
             rs.getString("username"),
@@ -321,13 +348,14 @@ public class SQLite {
     }
     
     public boolean checkUserExists(String username){
-        String sql = "SELECT username FROM users WHERE username='" + username.toLowerCase() +"' COLLATE NOCASE;";
-        
+        String sql = "SELECT username FROM users WHERE username=? COLLATE NOCASE";
+        username = username.toLowerCase();
         //System.out.println(sql);
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             if(!rs.next()){
                 //System.out.println("User Unique. User: " + username + " Created");
@@ -340,23 +368,24 @@ public class SQLite {
     
     public boolean loginCheck(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException{
         
-        String sql = "SELECT username, password FROM users WHERE username='" + username + "';";
+        String sql = "SELECT username, password FROM users WHERE username=?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             while(rs.next()){
                 if(validatePassword(password, rs.getString("password"))){
-                    new LogWrite().writeToLog("User: " + username + " has logged in");
-                    new LogWrite().deleteAttempts();
+                    //new LogWrite().writeToLog("User: " + username + " has logged in");
+                    //new LogWrite().deleteAttempts();
                     return true;
                 }
             }
             
         } catch (Exception ex) {}
-        new LogWrite().writeToLog("User: " + username + " attempted to logged in");
-        new LogWrite().writeToAttempts("User: " + username + " attempted to logged in");
+        //new LogWrite().writeToLog("User: " + username + " attempted to logged in");
+        //new LogWrite().writeToAttempts("User: " + username + " attempted to logged in");
         return false;
     }
     
@@ -371,13 +400,14 @@ public class SQLite {
     }
     
     public int getRole(String username){
-        String sql = "SELECT role FROM users WHERE username='" + username + "';";
+        String sql = "SELECT role FROM users WHERE username=?";
         
         //System.out.println(sql);
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,username);
+            ResultSet rs = stmt.executeQuery();
             
             if(rs.next()){
                 //System.out.println(" with Role " + rs.getInt("role"));
@@ -512,11 +542,12 @@ public class SQLite {
     }
     
     public Product getProduct(String name){
-        String sql = "SELECT name, stock, price FROM product WHERE name='" + name + "';";
+        String sql = "SELECT name, stock, price FROM product WHERE name=?";
         Product product = null;
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,name);
+            ResultSet rs = stmt.executeQuery();
             product = new Product(rs.getString("name"),
                                    rs.getInt("stock"),
                                    rs.getFloat("price"));
@@ -525,16 +556,18 @@ public class SQLite {
     }
     
     public void editRole(String editor, String username, int role){
-        String sql  = "UPDATE users SET role = '" +role+ "' WHERE username = '" +username+ "';";
+        String sql  = "UPDATE users SET role = ? WHERE username = ?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("User: " + editor + " has set the role of User: " + username + " to " +role);
-            System.out.println("User: " + editor + " has set the role of User: " + username + " to " +role);
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setInt(1,role);
+            stmt.setString(2,username);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("User: " + editor + " has set the role of User: " + username + " to " +role);
+            //System.out.println("User: " + editor + " has set the role of User: " + username + " to " +role);
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + editor + " tried to set the role of User: " + username + " to " +role);
-            System.err.println("User: " + editor + " tried to set the role of User: " + username + " to " +role);
+            //logWrite.writeToLog("User: " + editor + " tried to set the role of User: " + username + " to " +role);
+            //System.err.println("User: " + editor + " tried to set the role of User: " + username + " to " +role);
         }
     }
     
@@ -543,17 +576,20 @@ public class SQLite {
         String[] parts = hashedPass.split(":");
         byte[] salt = fromHex(parts[1]);
         
-        String sql  = "UPDATE users SET password = '" +hashedPass+ "', salt ='"+salt+"' WHERE username = '" +username+ "';";
+        String sql  = "UPDATE users SET password = ?, salt =? WHERE username = ?";
         //System.out.println(sql);
         
          try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("User: " + editor + " has changed the password of User: " + username);
-            System.out.println("User: " + editor + " has changed the password of User: " + username);
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,hashedPass);
+            stmt.setBytes(2,salt);
+            stmt.setString(3,username);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("User: " + editor + " has changed the password of User: " + username);
+            //System.out.println("User: " + editor + " has changed the password of User: " + username);
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + editor + " tried to change the password of User: " + username);
-            System.err.println("User: " + editor + " tried to change the password of User: " + username);
+            //logWrite.writeToLog("User: " + editor + " tried to change the password of User: " + username);
+            //System.err.println("User: " + editor + " tried to change the password of User: " + username);
         }
     }
     
@@ -563,26 +599,29 @@ public class SQLite {
             state = 0;
         }
         
-        String sql = "UPDATE users SET locked = '" +state+ "' WHERE username = '" +username+ "';";
+        String sql = "UPDATE users SET locked = ? WHERE username = ?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            logWrite.writeToLog("User: " + editor + " has set the lock of User: " + username + " to " +state);
-            System.out.println("User: " + editor + " has set the lock of User: " + username + " to " +state);
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setInt(1, state);
+            stmt.setString(1, username);
+            stmt.executeUpdate();
+            //logWrite.writeToLog("User: " + editor + " has set the lock of User: " + username + " to " +state);
+            //System.out.println("User: " + editor + " has set the lock of User: " + username + " to " +state);
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
-            System.err.println("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
+            //logWrite.writeToLog("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
+            //System.err.println("User: " + editor + " tried to set the lock of User: " + username + " to " +state);
         }
     }
     
     public ArrayList<History> getClientHistory(String username){
-        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "';";
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = ?";
         ArrayList<History> histories = new ArrayList<History>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             while (rs.next()) {
                 histories.add(new History(rs.getInt("id"),
@@ -591,23 +630,24 @@ public class SQLite {
                                    rs.getInt("stock"),
                                    rs.getString("timestamp")));
             }
-            logWrite.writeToLog("User: " + username + " is reading through their purchase history");
-            System.out.println("User: " + username + " is reading through their purchase history");
+            //logWrite.writeToLog("User: " + username + " is reading through their purchase history");
+            //System.out.println("User: " + username + " is reading through their purchase history");
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + username + " tried to read their purchase history");
-            System.err.println("User: " + username + " tried to read their purchase history");
+            //logWrite.writeToLog("User: " + username + " tried to read their purchase history");
+            //System.err.println("User: " + username + " tried to read their purchase history");
         }
         return histories;
     }
     
     public ArrayList<History> getStaffHistory(String username){
-        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role='3');";
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = ? OR username in (select username from users where role='3')";
         //select * from history where username = 'staff' or username in (select username from users where role='2');
         ArrayList<History> histories = new ArrayList<History>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             while (rs.next()) {
                 histories.add(new History(rs.getInt("id"),
@@ -616,23 +656,24 @@ public class SQLite {
                                    rs.getInt("stock"),
                                    rs.getString("timestamp")));
             }
-            logWrite.writeToLog("User: " + username + " is reading through their's and other staff's history");
-            System.out.println("User: " + username + " is reading through their's and other staff's history");
+            //logWrite.writeToLog("User: " + username + " is reading through their's and other staff's history");
+            //System.out.println("User: " + username + " is reading through their's and other staff's history");
         } catch (Exception ex) {
-            logWrite.writeToLog("User: " + username + " tried to read their's and other staff's history");
-            System.err.println("User: " + username + " tried to read their's and other staff's history");
+            //logWrite.writeToLog("User: " + username + " tried to read their's and other staff's history");
+            //System.err.println("User: " + username + " tried to read their's and other staff's history");
         }
         return histories;
     }
     
     public ArrayList<History> getManagerHistory(String username){
-        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = '" +username+ "' OR username in (select username from users where role<='3');";
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username = ? OR username in (select username from users where role<='3');";
         //select * from history where username = 'staff' or username in (select username from users where role='2');
         ArrayList<History> histories = new ArrayList<History>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             while (rs.next()) {
                 histories.add(new History(rs.getInt("id"),
@@ -651,11 +692,12 @@ public class SQLite {
     }
     
     public boolean checkIfUserLocked(String username){
-       String sql = "SELECT locked FROM users WHERE username='" + username + "';";
+       String sql = "SELECT locked FROM users WHERE username=?";
        int locked = 0;
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
             
             if(rs.next()){
                 //System.out.println(" with Role " + rs.getInt("role"));

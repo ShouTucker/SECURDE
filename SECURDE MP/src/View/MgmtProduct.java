@@ -212,16 +212,20 @@ public class MgmtProduct extends javax.swing.JPanel {
             
             if (result == JOptionPane.OK_OPTION) {
                 if(isNumeric(stockFld.getText())){
-                    int stockNum = Integer.parseInt(productStock);
-                    if(Integer.parseInt(stockFld.getText()) <= stockNum){
-                        System.out.println(stockFld.getText());               
-                        tableModel.setValueAt(stockNum - Integer.parseInt(stockFld.getText()), table.getSelectedRow(), 1);
+                    if(Integer.parseInt(stockFld.getText()) > 0){
+                        int stockNum = Integer.parseInt(productStock);
+                        if(Integer.parseInt(stockFld.getText()) <= stockNum){
+                            System.out.println(stockFld.getText());               
+                            tableModel.setValueAt(stockNum - Integer.parseInt(stockFld.getText()), table.getSelectedRow(), 1);
 
-                        sqlite.buyProduct(username, product, stockNum, Integer.parseInt(stockFld.getText()));
-                    } 
-                    else{
-                        JOptionPane.showMessageDialog(null, "Cannot buy more than " + stockNum + " " +tableModel.getValueAt(table.getSelectedRow(), 0).toString(), "",JOptionPane.ERROR_MESSAGE);
+                            sqlite.buyProduct(username, product, stockNum, Integer.parseInt(stockFld.getText()));
+                        } 
+                        else{
+                            JOptionPane.showMessageDialog(null, "Cannot buy more than " + stockNum + " " +tableModel.getValueAt(table.getSelectedRow(), 0).toString(), "",JOptionPane.ERROR_MESSAGE);
+                        }
                     }
+                    else
+                        JOptionPane.showMessageDialog(null, "ERROR: Cannot buy less than or equal to 0 stocks", "ERROR",JOptionPane.ERROR_MESSAGE);
                 }
                 else
                     JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer", "ERROR",JOptionPane.ERROR_MESSAGE);
@@ -245,16 +249,21 @@ public class MgmtProduct extends javax.swing.JPanel {
         int result = JOptionPane.showConfirmDialog(null, message, "ADD PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
         if (result == JOptionPane.OK_OPTION) {
-            if(isDouble(priceFld.getText()) && isDouble(stockFld.getText())){
-                System.out.println(nameFld.getText());
-                System.out.println(stockFld.getText());
-                System.out.println(priceFld.getText());
+            if(isDouble(priceFld.getText()) && isNumeric(stockFld.getText())){
+                if(Integer.parseInt(stockFld.getText()) >= 0 && Double.parseDouble(priceFld.getText()) >= 0){
+                    System.out.println(nameFld.getText());
+                    System.out.println(stockFld.getText());
+                    System.out.println(priceFld.getText());
 
-                sqlite.addProduct(username, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
-                init(username, logWrite);
+                    sqlite.addProduct(username, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+                    init(username, logWrite);
+                }
+                
+                else
+                    JOptionPane.showMessageDialog(null, "ERROR: Cannot enter less than 0 stock/price", "ERROR",JOptionPane.ERROR_MESSAGE);
             }
             else
-                JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer for stock or price field", "ERROR",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer/double for stock or price field", "ERROR",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -276,13 +285,18 @@ public class MgmtProduct extends javax.swing.JPanel {
 
             if (result == JOptionPane.OK_OPTION) {
                 if(isDouble(priceFld.getText()) && isDouble(stockFld.getText())){
-                    System.out.println(nameFld.getText());
-                    System.out.println(stockFld.getText());
-                    System.out.println(priceFld.getText());
-                    String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
+                    if(Integer.parseInt(stockFld.getText()) >= 0 && Double.parseDouble(priceFld.getText()) >= 0){
+                        System.out.println(nameFld.getText());
+                        System.out.println(stockFld.getText());
+                        System.out.println(priceFld.getText());
+                        String product = tableModel.getValueAt(table.getSelectedRow(), 0).toString();
 
-                    sqlite.editProduct(product, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
-                    init(username, logWrite);
+                        sqlite.editProduct(product, nameFld.getText(), Integer.parseInt(stockFld.getText()), Float.parseFloat(priceFld.getText()));
+                        init(username, logWrite);
+                    }
+                    
+                    else
+                        JOptionPane.showMessageDialog(null, "ERROR: Cannot enter less than 0 stock/price", "ERROR",JOptionPane.ERROR_MESSAGE);
                 }
                 else
                     JOptionPane.showMessageDialog(null, "ERROR: Please only enter an integer for stock or price field", "ERROR",JOptionPane.ERROR_MESSAGE);
