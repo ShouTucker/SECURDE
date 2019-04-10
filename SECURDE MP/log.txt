@@ -1235,3 +1235,5 @@ User: staff3 is reading through their's and other staff's history 2019-04-09T23:
 User: staff3 has logged out 2019-04-10T00:22:37.883
 User: admin has logged in 2019-04-10T00:22:44.403
 User: admin accessing adminHomePnl 2019-04-10T00:22:44.475
+User: admin has logged in 2019-04-10T11:27:26.508
+User: admin accessing adminHomePnl 2019-04-10T11:27:26.585
